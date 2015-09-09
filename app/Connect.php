@@ -1,5 +1,15 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file. -->
 
+<?php
+require_once('AuthenticationManager.php');
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $redirect = AuthenticationManager::getLoginUrl();
+    header("Location: {$redirect}");
+    die();
+}
+?>
+      
 <!DOCTYPE html>
 <html>
 
@@ -18,24 +28,26 @@
 </head>
 
 <body class="ms-Grid">
-  <div class="ms-Grid-row">
-  <!-- App navigation bar markup. -->
-  <div class="ms-NavBar">
-    <ul class="ms-NavBar-items">
-      <li class="navbar-header">Office 365 Connect sample</li>
-    </ul>
-  </div>
+    <form action="" method="post">
+    <div class="ms-Grid-row">
+    <!-- App navigation bar markup. -->
+        <div class="ms-NavBar">
+            <ul class="ms-NavBar-items">
+                <li class="navbar-header">Office 365 Connect sample</li>
+            </ul>
+        </div>
 
-  <!-- App main content markup. -->
-  <div class="ms-Grid-col ms-u-mdPush1 ms-u-md9 ms-u-lgPush1 ms-u-lg6">
-    <div>
-      <p class="ms-font-xl">Use the button below to connect to Office 365.</p>
-      <button class="ms-Button">
-        <span class="ms-Button-label">Connect to Office 365</span>
-      </button>
+    <!-- App main content markup. -->
+    <div class="ms-Grid-col ms-u-mdPush1 ms-u-md9 ms-u-lgPush1 ms-u-lg6">
+        <div>
+            <p class="ms-font-xl">Use the button below to connect to Office 365.</p>
+            <button class="ms-Button">
+                <span class="ms-Button-label">Connect to Office 365</span>
+            </button>
+        </div>
     </div>
-  </div>
-</div>
+    </div>
+    </form>
 </body>
 
 </html>
