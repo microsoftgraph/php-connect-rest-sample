@@ -5,7 +5,22 @@
 
     class AuthenticationManager{
         public static function getLoginUrl(){
-            return Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT . '?client_id=' . Constants::CLIENT_ID . '&redirect_uri=' . Constants::REDIRECT_URI . '&response_type=code';
+            return Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT . '?response_type=code&client_id=' . Constants::CLIENT_ID . '&redirect_uri=' . Constants::REDIRECT_URI;
+        }
+    }
+    
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        if(isset($_GET['admin_consent'])){
+            echo 'Admin consent: ' . $_GET['admin_consent'];
+        }
+        if(isset($_GET['code'])){
+            echo 'Code: ' . $_GET['code'];
+        }
+        if(isset($_GET['session_state'])){
+            echo 'Session state: ' . $_GET['session_state'];
+        }
+        if(isset($_GET['state'])){
+            echo 'State: ' . $_GET['state'];
         }
     }
 ?>
