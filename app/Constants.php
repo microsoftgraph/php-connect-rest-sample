@@ -2,12 +2,12 @@
 
 <?php
     class Constants{
-	   private static $CLIENT_ID = "<YOUR CLIENT ID HERE>";
-	   private static $CLIENT_SECRET = "<YOUR CLIENT SECRET HERE>";
-       private static $REDIRTECT_URI = "<YOUR REDIRECT URI HERE>";
-	   private static $AUTHORITY_URL = "https://login.microsoftonline.com/common";
-	   private static $AUTHORIZE_ENDPOINT = "{$authorityUrl}/oauth2/authorize?client_id={$clientId}$s&redirect_uri={$REDIRECT_URI}$s&response_type=code";
-	   private static $TOKEN_ENDPOINT = "{$authorityUrl}/oauth2/token";
+	   const CLIENT_ID = '<YOUR CLIENT ID HERE>';
+	   const CLIENT_SECRET = '<YOUR CLIENT SECRET HERE>';
+       const REDIRECT_URI = '<YOUR REDIRECT URI HERE>';
+	   const AUTHORITY_URL = 'https://login.microsoftonline.com/common';
+	   const AUTHORIZE_ENDPOINT = '/oauth2/authorize';
+	   const TOKEN_ENDPOINT = '/oauth2/token';
     }
 ?>
 
