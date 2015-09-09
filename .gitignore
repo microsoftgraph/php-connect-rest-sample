@@ -15,3 +15,6 @@
 # FuelPHP
 fuel/app/logs/*/*/*
 fuel/app/cache/*/*
+
+# Visual Studio Code
+.settings
