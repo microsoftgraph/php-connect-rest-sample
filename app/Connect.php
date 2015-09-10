@@ -9,7 +9,7 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $redirect = AuthenticationManager::getLoginUrl();
         header("Location: {$redirect}");
-        die();
+        exit();
     }
 ?>
       

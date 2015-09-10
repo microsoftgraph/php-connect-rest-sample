@@ -1,6 +1,7 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file. -->
 
 <?php
+    session_start();
     require_once('AuthenticationManager.php');
 
     // Handle the authorization code part of the flow
@@ -21,8 +22,8 @@
         AuthenticationManager::getTokens();
         
         $redirect = 'SendMail.php';
-        header("Location: {$redirect}");
-        die();
+        header("Location: " . $redirect);
+        exit();
     }
 ?>
 
