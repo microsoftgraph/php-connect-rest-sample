@@ -46,11 +46,6 @@
             // Send the request & save response to $resp
             $resp = curl_exec($curl);
             
-            var_dump($resp);
-            
-            if(!curl_exec($curl)){
-                print('Error: "' . curl_error($curl) . '" - Code: ' . curl_errno($curl));
-            }
             // Close request to clear up some resources
             curl_close($curl);
         }
