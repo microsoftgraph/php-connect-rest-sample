@@ -41,9 +41,9 @@
       <div class="ms-TextField">
         <input class="ms-TextField-field" name="recipient" value="<?=$_SESSION['unique_name']?>">
       </div>
-      <div class="icon-holder">
-        <input type="submit" value="Send mail">
-      </div>
+        <button class="ms-Button">
+                <span class="ms-Button-label">Send mail</span>
+        </button>
       <div>
           <?php
               if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recipient'])) {
