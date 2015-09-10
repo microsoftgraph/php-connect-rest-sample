@@ -56,7 +56,7 @@
         
       </div>
       <div>
-        <p class="ms-font-m ms-fontColor-redDark">Something went wrong, couldn't send an email.</p>        
+        <!--<p class="ms-font-m ms-fontColor-redDark">Something went wrong, couldn't send an email.</p>-->        
       </div>
     </div>
   </div>
