@@ -28,7 +28,7 @@
   <div class="ms-NavBar">
     <ul class="ms-NavBar-items">
       <li class="navbar-header">Office 365 Connect sample</li>
-      <li class="ms-NavBar-item ms-NavBar-item--right"><i class="ms-Icon ms-Icon--x"></i> Disconnect</li>
+      <li class="ms-NavBar-item ms-NavBar-item--right" onclick="window.location.href='disconnect.php'"><i class="ms-Icon ms-Icon--x"></i> Disconnect</li>
     </ul>
   </div>
 
