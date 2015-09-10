@@ -1,5 +1,9 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file. -->
 
+<?php
+    //We store user name, id, and tokens in session variables
+    session_start(); 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -30,10 +34,10 @@
   <!-- App main content markup. -->
   <div class="ms-Grid-col ms-u-mdPush1 ms-u-md9 ms-u-lgPush1 ms-u-lg6">
     <div>
-      <h2 class="ms-font-xxl ms-fontWeight-semibold">Hi, {{ main.userFirstName }}!</h2>
+      <h2 class="ms-font-xxl ms-fontWeight-semibold">Hi, <?=$_SESSION['given_name']?>!</h2>
       <p class="ms-font-xl">You're now connected to Office 365. Click the mail icon below to send a message from your account using the Office 365 unified API. </p>
       <div class="ms-TextField">
-        <input class="ms-TextField-field">
+        <input class="ms-TextField-field" value="<?=$_SESSION['unique_name']?>">
       </div>
       <div class="icon-holder">
         <a href=""><i class="ms-Icon ms-Icon--mailSend big-icon"></i></a>
