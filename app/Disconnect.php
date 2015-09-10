@@ -4,9 +4,8 @@
     session_start();
     require_once('AuthenticationManager.php');
     
-    AuthenticationManager::disconnect();  
+    $redirect = AuthenticationManager::disconnect();  
     
-    $redirect = 'https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=http%3A%2F%2Flocalhost%2FO365-PHP-Unified-API-Connect%2Fconnect.php';
     header("Location: " . $redirect);
     exit();
 ?>

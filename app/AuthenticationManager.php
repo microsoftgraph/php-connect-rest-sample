@@ -65,6 +65,14 @@
                     setcookie($name, '', time()-1000, '/');
                 }
             }
+            
+            $redirect = (@$_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
+            $redirect .= $_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
+            
+            // Get the URL before the document and substitute with connect.php
+            $redirect = substr($redirect, 0, strrpos( $redirect, '/') ) . '/connect.php';
+ 
+            return Constants::AUTHORITY_URL . Constants::LOGOUT_ENDPOINT . '?post_logout_redirect_uri=' . $redirect;
         }
     }
 ?>
