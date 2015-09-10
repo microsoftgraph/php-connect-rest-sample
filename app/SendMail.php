@@ -42,7 +42,7 @@
         <input class="ms-TextField-field" name="recipient" value="<?=$_SESSION['unique_name']?>">
       </div>
       <div class="icon-holder">
-        <button class="ms-Icon ms-Icon--mailSend big-icon"></button>
+        <input type="submit" value="Send mail">
       </div>
       <div>
           <?php
