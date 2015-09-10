@@ -7,20 +7,52 @@
         public static function getLoginUrl(){
             return Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT . '?response_type=code&client_id=' . Constants::CLIENT_ID . '&redirect_uri=' . Constants::REDIRECT_URI;
         }
-    }
-    
-    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        if(isset($_GET['admin_consent'])){
-            echo 'Admin consent: ' . $_GET['admin_consent'];
-        }
-        if(isset($_GET['code'])){
-            echo 'Code: ' . $_GET['code'];
-        }
-        if(isset($_GET['session_state'])){
-            echo 'Session state: ' . $_GET['session_state'];
-        }
-        if(isset($_GET['state'])){
-            echo 'State: ' . $_GET['state'];
+        
+        public static function getTokens(){
+            $tokenEndpoint = Constants::AUTHORITY_URL . Constants::TOKEN_ENDPOINT;
+            
+            $curl = curl_init();
+            
+            curl_setopt_array($curl, array(
+                CURLOPT_RETURNTRANSFER => 1,
+                CURLOPT_URL => $tokenEndpoint,
+                CURLOPT_POST => 1,
+                CURLOPT_POSTFIELDS => array(
+                    'client_id' => Constants::CLIENT_ID,
+                    'client_secret' => Constants::CLIENT_SECRET,
+                    'code' => $_SESSION['code'],
+                    'grant_type' => 'authorization_code',
+                    'redirect_uri' => Constants::REDIRECT_URI,
+                    'resource' => 'https://graph.microsoft.com/'
+                )
+            ));
+            
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+            
+            // Send the request & save response to $resp
+            $resp = curl_exec($curl);
+            
+            if(!curl_exec($curl)){
+                die('Error: "' . curl_error($curl) . '" - Code: ' . curl_errno($curl));
+            }
+            // Close request to clear up some resources
+            curl_close($curl);
+            
+            $jsonResponse = json_decode($resp, true);
+            foreach ($jsonResponse as $key=>$value) {
+                $_SESSION[$key] = $value;
+            }
+            
+            $startOfPayload = strpos($_SESSION['access_token'], ".") + 1;
+            $endOfPayload = strpos($_SESSION['access_token'], ".", $startOfPayload);
+            
+            $decodedAccessTokenPayload = base64_decode(substr($_SESSION['access_token'], $startOfPayload, $endOfPayload - $startOfPayload));
+            
+            $jsonAccessTokenPayload = json_decode($decodedAccessTokenPayload, true);
+            
+            $_SESSION['given_name'] = $jsonAccessTokenPayload['given_name'];
+            $_SESSION['family_name'] = $jsonAccessTokenPayload['family_name'];
+            $_SESSION['unique_name'] = $jsonAccessTokenPayload['unique_name'];
         }
     }
 ?>
