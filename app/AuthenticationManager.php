@@ -35,32 +35,47 @@
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
             
             // Send the request & save response to $resp
-            $resp = curl_exec($curl);
+            $response = curl_exec($curl);
             
             // Close request to clear up some resources
             curl_close($curl);
             
-            $jsonResponse = json_decode($resp, true);
+            $jsonResponse = json_decode($response, true);
+            
+            // The access token response has the following parameters:
+            // access_token - The requested access token.
+            // expires_in - How long the access token is valid.
+            // expires_on - The time when the access token expires.
+            // id_token - An unsigned JSON Web Token (JWT).
+            // refresh_token - An OAuth 2.0 refresh token.
+            // resource - The App ID URI of the web API (secured resource).
+            // scope - Impersonation permissions granted to the client application.
+            // token_type - Indicates the token type value.
             foreach ($jsonResponse as $key=>$value) {
-                // The access token response has the following parameters:
-                // access_token
-                // expires_in
-                // expires_on
-                // id_token
-                // refresh_token
-                // resource
-                // scope
-                // token_type
                 $_SESSION[$key] = $value;
             }
             
-            $decodedAccessTokenPayload = base64_decode(explode('.', $_SESSION['id_token'])[1]);
             
+            $decodedAccessTokenPayload = base64_decode(explode('.', $_SESSION['id_token'])[1]);            
             $jsonAccessTokenPayload = json_decode($decodedAccessTokenPayload, true);
             
-            $_SESSION['given_name'] = $jsonAccessTokenPayload['given_name'];
-            $_SESSION['family_name'] = $jsonAccessTokenPayload['family_name'];
-            $_SESSION['unique_name'] = $jsonAccessTokenPayload['unique_name'];
+            // The id token payload has the following parameters:
+            // aud - Audience of the token.
+            // exp - Expiration time.
+            // family_name - User’s last name or surname.
+            // given_name - User’s first name.
+            // iat - Issued at time.
+            // iss - Identifies the token issuer.
+            // nbf - Not before time. The time when the token becomes effective.
+            // oid - Object identifier (ID) of the user object in Azure AD.
+            // sub - Token subject identifier.
+            // tid - Tenant identifier (ID) of the Azure AD tenant that issued the token.
+            // unique_name - A unique identifier for that can be displayed to the user.
+            // upn - User principal name of the user.
+            // ver - Version.
+            foreach ($jsonAccessTokenPayload as $key=>$value) {
+                $_SESSION[$key] = $value;
+            }
         }
         
         public static function disconnect(){
