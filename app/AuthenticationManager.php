@@ -29,8 +29,10 @@
     }
 
     class AuthenticationManager{
-        public static function getLoginUrl(){
-            return Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT . '?response_type=code&client_id=' . Constants::CLIENT_ID . '&redirect_uri=' . Constants::REDIRECT_URI;
+        public static function connect(){
+            $authUrl = Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT . '?response_type=code&client_id=' . Constants::CLIENT_ID . '&redirect_uri=' . Constants::REDIRECT_URI;
+            header("Location: {$authUrl}");
+            exit();
         }
         
         public static function getTokens(){
