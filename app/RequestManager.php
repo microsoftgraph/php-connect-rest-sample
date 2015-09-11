@@ -26,7 +26,9 @@
                 CURLOPT_POSTFIELDS => $body
             ));
             
+            // Debug options
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($curl, CURLOPT_PROXY, '127.0.0.1:8888');
             
             // Send the request & save response to $resp
             $response = curl_exec($curl);
