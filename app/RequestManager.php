@@ -7,9 +7,7 @@
     require_once('Constants.php');
 
     class RequestManager{
-        
-        
-        public static function sendRequest($endpoint, $headers, $isPost = 0, $body = array()) {
+        public static function sendRequest($endpoint, $headers, $isPost = false, $body = array()) {
             if(!isset($headers)) {
                 $headers = array(
                     'Authorization: Bearer ' . $_SESSION['access_token'],
