@@ -21,8 +21,7 @@
         
         AuthenticationManager::getTokens();
         
-        $redirect = 'SendMail.php';
-        header("Location: " . $redirect);
+        header('Location: SendMail.php');
         exit();
     }
 ?>
