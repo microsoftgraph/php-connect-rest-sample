@@ -55,17 +55,6 @@
         public static function disconnect(){
             session_destroy();
             
-            // unset cookies
-            if (isset($_SERVER['HTTP_COOKIE'])) {
-                $cookies = explode(';', $_SERVER['HTTP_COOKIE']);
-                foreach($cookies as $cookie) {
-                    $parts = explode('=', $cookie);
-                    $name = trim($parts[0]);
-                    setcookie($name, '', time()-1000);
-                    setcookie($name, '', time()-1000, '/');
-                }
-            }
-            
             $redirect = (@$_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
             $redirect .= $_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
             
