@@ -8,6 +8,8 @@
 	   const AUTHORITY_URL = 'https://login.microsoftonline.com/common';
 	   const AUTHORIZE_ENDPOINT = '/oauth2/authorize';
 	   const TOKEN_ENDPOINT = '/oauth2/token';
+       const LOGOUT_ENDPOINT = '/oauth2/logout';
+       const SENDMAIL_ENDPOINT = 'https://graph.microsoft.com/beta/me/sendMail';
     }
 ?>
 
