@@ -18,10 +18,9 @@
         public static function getTokens(){
             $tokenEndpoint = Constants::AUTHORITY_URL . Constants::TOKEN_ENDPOINT;
             
-            $response = RequestManager::sendRequest(
+            $response = RequestManager::sendPostRequest(
                 $tokenEndpoint, 
-                null, 
-                true, 
+                array(),
                 array(
                     'client_id' => Constants::CLIENT_ID,
                     'client_secret' => Constants::CLIENT_SECRET,

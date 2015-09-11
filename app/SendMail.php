@@ -3,7 +3,7 @@
 <?php
     //We store user name, id, and tokens in session variables
     session_start();
-    require_once('RequestManager.php');
+    require_once('MailManager.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,7 +48,7 @@
         <div>
             <?php
                 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recipient'])) {
-                    MainManager::sendWelcomeMail($_POST['recipient']);
+                    MailManager::sendWelcomeMail($_POST['recipient']);
             ?>
                         <p class="ms-font-m ms-fontColor-green">Successfully sent an email to <?=$_POST['recipient']?>!</p>
             <?php
