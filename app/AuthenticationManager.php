@@ -1,7 +1,32 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file. -->
 
 <?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
     require_once('Constants.php');
+    
+    // Handle the authorization code part of the flow
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['code'])) {
+        if(isset($_GET['admin_consent'])){
+            $_SESSION['admin_consent'] = $_GET['admin_consent'];
+        }
+        if(isset($_GET['code'])){
+            $_SESSION['code'] =  $_GET['code'];
+        }
+        if(isset($_GET['session_state'])){
+            $_SESSION['session_state'] =  $_GET['session_state'];
+        }
+        if(isset($_GET['state'])){
+            $_SESSION['state'] =  $_GET['state'];
+        }
+        
+        AuthenticationManager::getTokens();
+        
+        $redirect = 'SendMail.php';
+        header("Location: " . $redirect);
+        exit();
+    }
 
     class AuthenticationManager{
         public static function getLoginUrl(){
