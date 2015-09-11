@@ -1,11 +1,16 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file. -->
 
 <?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
     require_once('Constants.php');
-
+    
     class AuthenticationManager{
-        public static function getLoginUrl(){
-            return Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT . '?response_type=code&client_id=' . Constants::CLIENT_ID . '&redirect_uri=' . Constants::REDIRECT_URI;
+        public static function connect(){
+            $redirect = Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT . '?response_type=code&client_id=' . Constants::CLIENT_ID . '&redirect_uri=' . Constants::REDIRECT_URI;
+            header("Location: {$redirect}");
+            exit();
         }
         
         public static function getTokens(){
@@ -37,13 +42,19 @@
             
             $jsonResponse = json_decode($resp, true);
             foreach ($jsonResponse as $key=>$value) {
+                // The access token response has the following parameters:
+                // access_token
+                // expires_in
+                // expires_on
+                // id_token
+                // refresh_token
+                // resource
+                // scope
+                // token_type
                 $_SESSION[$key] = $value;
             }
             
-            $startOfPayload = strpos($_SESSION['access_token'], ".") + 1;
-            $endOfPayload = strpos($_SESSION['access_token'], ".", $startOfPayload);
-            
-            $decodedAccessTokenPayload = base64_decode(substr($_SESSION['access_token'], $startOfPayload, $endOfPayload - $startOfPayload));
+            $decodedAccessTokenPayload = base64_decode(explode('.', $_SESSION['id_token'])[1]);
             
             $jsonAccessTokenPayload = json_decode($decodedAccessTokenPayload, true);
             
@@ -61,7 +72,9 @@
             // Get the URL before the document and substitute with connect.php
             $redirect = substr($redirect, 0, strrpos( $redirect, '/') ) . '/connect.php';
  
-            return Constants::AUTHORITY_URL . Constants::LOGOUT_ENDPOINT . '?post_logout_redirect_uri=' . $redirect;
+            $redirect = Constants::AUTHORITY_URL . Constants::LOGOUT_ENDPOINT . '?post_logout_redirect_uri=' . $redirect;
+            header("Location: " . $redirect);
+            exit();
         }
     }
 ?>

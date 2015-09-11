@@ -1,15 +1,10 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file. -->
 
 <?php
-    
-    //We store user name, id, and tokens in session variables
-    session_start(); 
     require_once('AuthenticationManager.php');
     
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $redirect = AuthenticationManager::getLoginUrl();
-        header("Location: {$redirect}");
-        exit();
+        AuthenticationManager::connect();
     }
 ?>
       

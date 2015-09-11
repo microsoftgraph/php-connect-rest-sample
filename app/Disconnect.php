@@ -4,10 +4,7 @@
     session_start();
     require_once('AuthenticationManager.php');
     
-    $redirect = AuthenticationManager::disconnect();  
-    
-    header("Location: " . $redirect);
-    exit();
+    AuthenticationManager::disconnect();  
 ?>
 
 <!--

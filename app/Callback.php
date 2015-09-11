@@ -3,9 +3,9 @@
 <?php
     session_start();
     require_once('AuthenticationManager.php');
-
+    
     // Handle the authorization code part of the flow
-    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['code'])) {
         if(isset($_GET['admin_consent'])){
             $_SESSION['admin_consent'] = $_GET['admin_consent'];
         }
@@ -21,8 +21,7 @@
         
         AuthenticationManager::getTokens();
         
-        $redirect = 'SendMail.php';
-        header("Location: " . $redirect);
+        header('Location: SendMail.php');
         exit();
     }
 ?>
