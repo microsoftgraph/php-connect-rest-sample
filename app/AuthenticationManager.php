@@ -54,10 +54,7 @@
                 $_SESSION[$key] = $value;
             }
             
-            $startOfPayload = strpos($_SESSION['access_token'], ".") + 1;
-            $endOfPayload = strpos($_SESSION['access_token'], ".", $startOfPayload);
-            
-            $decodedAccessTokenPayload = base64_decode(substr($_SESSION['access_token'], $startOfPayload, $endOfPayload - $startOfPayload));
+            $decodedAccessTokenPayload = base64_decode(explode('.', $_SESSION['id_token'])[1]);
             
             $jsonAccessTokenPayload = json_decode($decodedAccessTokenPayload, true);
             
