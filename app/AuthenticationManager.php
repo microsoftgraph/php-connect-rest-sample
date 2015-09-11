@@ -30,8 +30,8 @@
 
     class AuthenticationManager{
         public static function connect(){
-            $authUrl = Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT . '?response_type=code&client_id=' . Constants::CLIENT_ID . '&redirect_uri=' . Constants::REDIRECT_URI;
-            header("Location: {$authUrl}");
+            $redirect = Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT . '?response_type=code&client_id=' . Constants::CLIENT_ID . '&redirect_uri=' . Constants::REDIRECT_URI;
+            header("Location: {$redirect}");
             exit();
         }
         
@@ -88,7 +88,9 @@
             // Get the URL before the document and substitute with connect.php
             $redirect = substr($redirect, 0, strrpos( $redirect, '/') ) . '/connect.php';
  
-            return Constants::AUTHORITY_URL . Constants::LOGOUT_ENDPOINT . '?post_logout_redirect_uri=' . $redirect;
+            $redirect = Constants::AUTHORITY_URL . Constants::LOGOUT_ENDPOINT . '?post_logout_redirect_uri=' . $redirect;
+            header("Location: " . $redirect);
+            exit();
         }
     }
 ?>
