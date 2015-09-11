@@ -42,6 +42,15 @@
             
             $jsonResponse = json_decode($resp, true);
             foreach ($jsonResponse as $key=>$value) {
+                // The access token response has the following parameters:
+                // access_token
+                // expires_in
+                // expires_on
+                // id_token
+                // refresh_token
+                // resource
+                // scope
+                // token_type
                 $_SESSION[$key] = $value;
             }
             
