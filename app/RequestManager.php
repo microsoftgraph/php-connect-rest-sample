@@ -7,21 +7,14 @@
     require_once('Constants.php');
 
     class RequestManager{
-        public static function sendRequest($endpoint, $headers, $isPost = false, $body = array()) {
-            if(!isset($headers)) {
-                $headers = array(
-                    'Authorization: Bearer ' . $_SESSION['access_token'],
-                    'Content-Type: application/json;odata.metadata=minimal;odata.streaming=true'
-                );
-            }
-            
+        public static function sendPostRequest($endpoint, $headers, $body) {
             $curl = curl_init();
             json_encode($body);
             
             curl_setopt_array($curl, array(
                 CURLOPT_RETURNTRANSFER => 1,
                 CURLOPT_URL => $endpoint,
-                CURLOPT_POST => $isPost,
+                CURLOPT_POST => true,
                 CURLOPT_HTTPHEADER => $headers,
                 CURLOPT_POSTFIELDS => $body
             ));

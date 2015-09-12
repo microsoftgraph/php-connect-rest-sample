@@ -3,7 +3,7 @@
 <?php
     //We store user name, id, and tokens in session variables
     session_start();
-    require_once('RequestManager.php');
+    require_once('MailManager.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +35,6 @@
     <!-- App main content markup. -->
     <form action="" method="post">
     <div class="ms-Grid-col ms-u-mdPush1 ms-u-md9 ms-u-lgPush1 ms-u-lg6">
-        <?=var_dump($_SESSION)?>
     <div>
         <h2 class="ms-font-xxl ms-fontWeight-semibold">Hi, <?=$_SESSION['given_name']?>!</h2>
         <p class="ms-font-xl">You're now connected to Office 365. Click the mail icon below to send a message from your account using the Office 365 unified API. </p>
@@ -48,7 +47,7 @@
         <div>
             <?php
                 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recipient'])) {
-                    MainManager::sendWelcomeMail($_POST['recipient']);
+                    MailManager::sendWelcomeMail($_POST['recipient']);
             ?>
                         <p class="ms-font-m ms-fontColor-green">Successfully sent an email to <?=$_POST['recipient']?>!</p>
             <?php
