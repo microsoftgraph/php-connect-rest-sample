@@ -7,9 +7,9 @@
         @abstract Stores constant and configuration values used through the app
      */
     class Constants{
-       const CLIENT_ID = 'ee53de5f-2b30-4040-958f-f26cdbddf3c2';
-       const CLIENT_SECRET = 'ohfec1RMsg1lfXvKOwxneCmcysYd9q3DJu1bf0+Mnzc=';
-       const REDIRECT_URI = 'https://php-connect.azurewebsites.net/Callback.php';
+       const CLIENT_ID = '<YOUR CLIENT ID HERE>';
+       const CLIENT_SECRET = '<YOUR CLIENT SECRET HERE>';
+       const REDIRECT_URI = '<YOUR REDIRECT URI HERE>';
 	   const AUTHORITY_URL = 'https://login.microsoftonline.com/common';
 	   const AUTHORIZE_ENDPOINT = '/oauth2/authorize';
 	   const TOKEN_ENDPOINT = '/oauth2/token';
