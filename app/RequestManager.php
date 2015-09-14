@@ -29,8 +29,9 @@
                 CURLOPT_POSTFIELDS => $body
             ));
             
-            // Debug options
+            // Option to disable certificate verification. Do not use on production sites
             // curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+            // Option to set a proxy for curl to use. Useful if you want to review traffic with a tool like Fiddler. 
             // curl_setopt($curl, CURLOPT_PROXY, '127.0.0.1:8888');
             
             // Enable error reporting on curl
