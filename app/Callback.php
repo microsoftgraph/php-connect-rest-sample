@@ -11,7 +11,8 @@
     }
     require_once('AuthenticationManager.php');
     
-    // Handle the authorization code part of the flow
+    // Get the authorization code and other parameters from the query string
+    // and store them in the session.
     if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['code'])) {
         if(isset($_GET['admin_consent'])){
             $_SESSION['admin_consent'] = $_GET['admin_consent'];
@@ -26,6 +27,7 @@
             $_SESSION['state'] =  $_GET['state'];
         }
         
+        // With the authorization code, we can retrieve access tokens and other data. 
         AuthenticationManager::acquireToken();
         
         header('Location: SendMail.php');

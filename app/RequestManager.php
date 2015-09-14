@@ -9,6 +9,14 @@
         MailManager to contact the Office 365 unified endpoint.
      */
     class RequestManager{
+        
+        /*! @function sendPostRequest
+            @abstract Helper method to send a POST request.
+            @param $endpoint string - The endpoint to send the request to.
+            @param $headers array - Array of key-value pairs that form the header of the request.
+            @param $body array - Array of key-value pairs that form the body of the request.
+            @result string - The raw response returned by the endpoint.
+         */
         public static function sendPostRequest($endpoint, $headers, $body) {
             $curl = curl_init();
             json_encode($body);
@@ -25,7 +33,7 @@
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
             // curl_setopt($curl, CURLOPT_PROXY, '127.0.0.1:8888');
             
-            // Send the request & save response to $response
+            // Send the request & save response to a variable
             $response = curl_exec($curl);
             
             // Close request and clear some resources

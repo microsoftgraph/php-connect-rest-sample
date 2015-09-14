@@ -55,6 +55,7 @@
         </button>
         <div>
             <?php
+                // The user clicked the "Send mail" button 
                 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recipient'])) {
                     MailManager::sendWelcomeMail($_POST['recipient']);
             ?>
