@@ -2,22 +2,45 @@
 /*
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
  */
+ 
+/*! @header Office 365 PHP Connect sample using unified API (preview)
+    @abstract A PHP project that shows how to use the Office 365 unified API 
+ */
+ 
+    // We use the session to store tokens and data about the user. 
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
+    
     require_once('Constants.php');
     require_once('RequestManager.php');
     
+    /*! @class AuthenticationManager
+        @abstract Provides methods to authenticate to Azure AD and store tokens and user information
+     */
     class AuthenticationManager{
+        
+        /*! @function connect
+            @abstract Starts the authentication flow. At the end, the user should be redirected to callback.php 
+         */
         public static function connect(){
+            // Redirect the browser to the authorization endpoint. Auth endpoint is:
+            // https://login.microsoftonline.com/common/oauth2/authorize
             $redirect = Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT . '?response_type=code&client_id=' . Constants::CLIENT_ID . '&redirect_uri=' . Constants::REDIRECT_URI;
             header("Location: {$redirect}");
             exit();
         }
         
-        public static function getTokens(){
+        /*! @function acquireToken
+            @abstract Contacts the token endpoint to get OAuth tokens including an access token
+            that can be used to send an authenticated request to the Office 365 unified API.
+            It also stores user information, like given name, in session variables.  
+         */
+        public static function acquireToken(){
             $tokenEndpoint = Constants::AUTHORITY_URL . Constants::TOKEN_ENDPOINT;
             
+            // Send a POST request to the token endpoint to retrieve tokens. Token endpoint is:
+            // https://login.microsoftonline.com/common/oauth2/token
             $response = RequestManager::sendPostRequest(
                 $tokenEndpoint, 
                 array(),
@@ -27,10 +50,11 @@
                     'code' => $_SESSION['code'],
                     'grant_type' => 'authorization_code',
                     'redirect_uri' => Constants::REDIRECT_URI,
-                    'resource' => 'https://graph.microsoft.com/'
+                    'resource' => Constants::RESOURCE_ID
                 )
             );
 
+            // Store the raw response in JSON format.
             $jsonResponse = json_decode($response, true);
             
             // The access token response has the following parameters:
@@ -46,7 +70,8 @@
                 $_SESSION[$key] = $value;
             }
             
-            
+            // The id token is a JWT token that contains information about the user
+            // It's a base64 coded string that has a header and payload 
             $decodedAccessTokenPayload = base64_decode(explode('.', $_SESSION['id_token'])[1]);            
             $jsonAccessTokenPayload = json_decode($decodedAccessTokenPayload, true);
             
@@ -69,16 +94,21 @@
             }
         }
         
+        /*! @function disconnect
+            @abstract Clear the session and redirect the browser to Azure's logout endpoint.
+         */
         public static function disconnect(){
             session_destroy();
             
-            $redirect = (@$_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
-            $redirect .= $_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
+            $connectUrl = (@$_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
+            $connectUrl .= $_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
             
-            // Get the URL before the document and substitute with connect.php
-            $redirect = substr($redirect, 0, strrpos( $redirect, '/') ) . '/connect.php';
+            // Get the full URL of the connect.php to send it to the logout endpoint
+            $connectUrl = substr($connectUrl, 0, strrpos( $connectUrl, '/') ) . '/connect.php';
  
-            $redirect = Constants::AUTHORITY_URL . Constants::LOGOUT_ENDPOINT . '?post_logout_redirect_uri=' . $redirect;
+            // Logout endpoint is in the form
+            // https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=<full_url_of_your_start_page> 
+            $redirect = Constants::AUTHORITY_URL . Constants::LOGOUT_ENDPOINT . '?post_logout_redirect_uri=' . $connectUrl;
             header("Location: " . $redirect);
             exit();
         }
