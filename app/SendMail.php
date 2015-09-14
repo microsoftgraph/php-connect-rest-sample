@@ -57,16 +57,20 @@
             <?php
                 // The user clicked the "Send mail" button 
                 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recipient'])) {
-                    MailManager::sendWelcomeMail($_POST['recipient']);
+                    try {
+                        MailManager::sendWelcomeMail($_POST['recipient']);
             ?>
                         <p class="ms-font-m ms-fontColor-green">Successfully sent an email to <?=$_POST['recipient']?>!</p>
             <?php
+                    } catch (RuntimeException $e) {
+            ?>
+                        <p class="ms-font-m ms-fontColor-redDark">Something went wrong, couldn't send an email.</p>
+            <?php            
+                    }
+            
                 }
             ?>
         
-        </div>
-        <div>
-        <!--<p class="ms-font-m ms-fontColor-redDark">Something went wrong, couldn't send an email.</p>-->        
         </div>
     </div>
     </div>
