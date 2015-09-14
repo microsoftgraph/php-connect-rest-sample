@@ -35,6 +35,10 @@
             
             // Send the request & save response to a variable
             $response = curl_exec($curl);
+            // Check for errors
+            if(curl_errno($curl)) {
+                throw new RuntimeException(curl_error($curl));
+            }
             
             // Close request and clear some resources
             curl_close($curl);

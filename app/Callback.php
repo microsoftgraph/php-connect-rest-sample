@@ -27,11 +27,14 @@
             $_SESSION['state'] =  $_GET['state'];
         }
         
-        // With the authorization code, we can retrieve access tokens and other data. 
-        AuthenticationManager::acquireToken();
-        
-        header('Location: SendMail.php');
-        exit();
+        // With the authorization code, we can retrieve access tokens and other data.
+        try {
+            AuthenticationManager::acquireToken();
+            header('Location: SendMail.php');
+            exit();
+        } catch (RuntimeException $e){
+            echo 'Something went wrong, couldn\'t get tokens.';
+        }
     }
     
 // *********************************************************
