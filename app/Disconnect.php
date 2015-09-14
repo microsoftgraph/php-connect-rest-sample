@@ -2,7 +2,6 @@
 /*
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
  */
-    session_start();
     require_once('AuthenticationManager.php');
     
     AuthenticationManager::disconnect();

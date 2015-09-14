@@ -3,7 +3,9 @@
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
  */
     //We store user name, id, and tokens in session variables
-    session_start();
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
     require_once('MailManager.php');
 ?>
 <!DOCTYPE html>
