@@ -30,8 +30,8 @@
             ));
             
             // Debug options
-            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-            curl_setopt($curl, CURLOPT_PROXY, '127.0.0.1:8888');
+            // curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+            // curl_setopt($curl, CURLOPT_PROXY, '127.0.0.1:8888');
             
             // Enable error reporting on curl
             curl_setopt($curl, CURLOPT_FAILONERROR, true);
