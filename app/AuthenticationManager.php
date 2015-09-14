@@ -26,7 +26,7 @@
         public static function connect(){
             // Redirect the browser to the authorization endpoint. Auth endpoint is:
             // https://login.microsoftonline.com/common/oauth2/authorize
-            $redirect = Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT . '?response_type=code&client_id=' . Constants::CLIENT_ID . '&redirect_uri=' . Constants::REDIRECT_URI;
+            $redirect = Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT . '?response_type=code&client_id=' . urlencode(Constants::CLIENT_ID) . '&redirect_uri=' . urlencode(Constants::REDIRECT_URI);
             header("Location: {$redirect}");
             exit();
         }
@@ -108,7 +108,7 @@
  
             // Logout endpoint is in the form
             // https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=<full_url_of_your_start_page> 
-            $redirect = Constants::AUTHORITY_URL . Constants::LOGOUT_ENDPOINT . '?post_logout_redirect_uri=' . $connectUrl;
+            $redirect = Constants::AUTHORITY_URL . Constants::LOGOUT_ENDPOINT . '?post_logout_redirect_uri=' . urlencode($connectUrl);
             header("Location: " . $redirect);
             exit();
         }
