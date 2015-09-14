@@ -30,7 +30,7 @@
                     'code' => $_SESSION['code'],
                     'grant_type' => 'authorization_code',
                     'redirect_uri' => Constants::REDIRECT_URI,
-                    'resource' => 'https://graph.microsoft.com/'
+                    'resource' => Constants::RESOURCE_ID
                 )
             );
 

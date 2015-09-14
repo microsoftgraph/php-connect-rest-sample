@@ -10,7 +10,8 @@
 	   const AUTHORIZE_ENDPOINT = '/oauth2/authorize';
 	   const TOKEN_ENDPOINT = '/oauth2/token';
        const LOGOUT_ENDPOINT = '/oauth2/logout';
-       const SENDMAIL_ENDPOINT = 'https://graph.microsoft.com/beta/me/sendMail';
+       const RESOURCE_ID = 'https://graph.microsoft.com';
+       const SENDMAIL_ENDPOINT = '/beta/me/sendMail';
     }
     
 // *********************************************************

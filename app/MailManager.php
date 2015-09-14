@@ -32,7 +32,7 @@
                 }";
                 
             RequestManager::sendPostRequest(
-                Constants::SENDMAIL_ENDPOINT,
+                Constants::RESOURCE_ID . Constants::SENDMAIL_ENDPOINT,
                 array(
                     'Authorization: Bearer ' . $_SESSION['access_token'],
                     'Content-Type: application/json;odata.metadata=minimal;odata.streaming=true'
