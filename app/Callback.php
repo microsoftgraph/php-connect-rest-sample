@@ -33,7 +33,7 @@
             header('Location: SendMail.php');
             exit();
         } catch (RuntimeException $e){
-            echo 'Something went wrong, couldn\'t get tokens.';
+            echo 'Something went wrong, couldn\'t get tokens: ' . $e->getMessage();
         }
     }
     
