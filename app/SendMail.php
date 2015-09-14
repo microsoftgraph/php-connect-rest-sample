@@ -2,6 +2,12 @@
 /*
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
  */
+ 
+    /*! 
+        @abstract User is directed to this page after the web app can get tokens and user information.
+        The page offers UI to send a welcome email to the specified account. 
+     */
+     
     //We store user name, id, and tokens in session variables
     if (session_status() == PHP_SESSION_NONE) {
         session_start();

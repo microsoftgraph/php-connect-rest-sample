@@ -2,6 +2,10 @@
 /*
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
  */
+ 
+    /*! 
+        @abstract The page that the user will be redirected to after Azure AD finishes the authentication flow.
+     */
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }

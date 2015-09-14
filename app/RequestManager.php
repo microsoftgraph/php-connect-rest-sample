@@ -4,6 +4,10 @@
  */
     require_once('Constants.php');
 
+    /*! @class RequestManager
+        @abstract Sends POST requests to the specified endpoint. It's used by AuthenticationManager to get OAuth tokens and 
+        MailManager to contact the Office 365 unified endpoint.
+     */
     class RequestManager{
         public static function sendPostRequest($endpoint, $headers, $body) {
             $curl = curl_init();
@@ -21,10 +25,10 @@
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
             // curl_setopt($curl, CURLOPT_PROXY, '127.0.0.1:8888');
             
-            // Send the request & save response to $resp
+            // Send the request & save response to $response
             $response = curl_exec($curl);
             
-            // Close request to clear up some resources
+            // Close request and clear some resources
             curl_close($curl);
             
             return $response;

@@ -2,8 +2,13 @@
 /*
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
  */
+ 
+    /*! 
+        @abstract This is the start page. It should display minimal UI emphasizing the "connect" button.
+     */
     require_once('AuthenticationManager.php');
     
+    // User has clicked the "connect" button. Start the authentication flow.
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         AuthenticationManager::connect();
     }

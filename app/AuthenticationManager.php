@@ -3,6 +3,10 @@
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
  */
  
+/*! @header Office 365 PHP Connect sample using unified API (preview)
+    @abstract A PHP project that shows how to use the Office 365 unified API 
+ */
+ 
     // We use the session to store tokens and data about the user. 
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
@@ -11,6 +15,9 @@
     require_once('Constants.php');
     require_once('RequestManager.php');
     
+    /*! @class AuthenticationManager
+        @abstract Provides methods to authenticate to Azure AD and store tokens and user information
+     */
     class AuthenticationManager{
         public static function connect(){
             $redirect = Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT . '?response_type=code&client_id=' . Constants::CLIENT_ID . '&redirect_uri=' . Constants::REDIRECT_URI;

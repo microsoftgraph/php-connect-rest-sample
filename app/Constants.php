@@ -2,6 +2,10 @@
 /*
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
  */
+ 
+    /*! @class Constants
+        @abstract Stores constant and configuration values used through the app
+     */
     class Constants{
 	   const CLIENT_ID = '<YOUR CLIENT ID HERE>';
 	   const CLIENT_SECRET = '<YOUR CLIENT SECRET HERE>';
