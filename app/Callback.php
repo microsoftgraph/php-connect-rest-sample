@@ -22,7 +22,7 @@
             $_SESSION['state'] =  $_GET['state'];
         }
         
-        AuthenticationManager::getTokens();
+        AuthenticationManager::acquireToken();
         
         header('Location: SendMail.php');
         exit();

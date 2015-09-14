@@ -2,9 +2,12 @@
 /*
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
  */
+ 
+    // We use the session to store tokens and data about the user. 
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
+    
     require_once('Constants.php');
     require_once('RequestManager.php');
     
@@ -15,7 +18,7 @@
             exit();
         }
         
-        public static function getTokens(){
+        public static function acquireToken(){
             $tokenEndpoint = Constants::AUTHORITY_URL . Constants::TOKEN_ENDPOINT;
             
             $response = RequestManager::sendPostRequest(
