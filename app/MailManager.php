@@ -36,7 +36,7 @@ class MailManager
      *  Builds the email message and uses RequestManager to send a POST request 
      *  to the sendmail endpoint in the unified API.
      *
-     *  @param string $recipient - The recipient of the email.
+     *  @param string $recipient The recipient of the email.
      *
      *  @function sendWelcomeMail
      *  @return   Nothing, passes RuntimeException from RequestManager on error
