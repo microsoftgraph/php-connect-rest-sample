@@ -1,4 +1,6 @@
 <?php
+namespace Microsoft\Office365\UnifiedAPI\Connect;
+
 /**
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  *  See full license at the bottom of this file.
@@ -45,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['code'])) {
         header('Location: SendMail.php');
         exit();
     } 
-    catch (RuntimeException $e)
+    catch (\RuntimeException $e)
     {
         echo 'Something went wrong, couldn\'t get tokens: ' . $e->getMessage();
     }

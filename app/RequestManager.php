@@ -1,4 +1,6 @@
 <?php
+namespace Microsoft\Office365\UnifiedAPI\Connect;
+
 /**
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  *  See full license at the bottom of this file.
@@ -68,7 +70,7 @@ class RequestManager
         $response = curl_exec($curl);
         // Check for errors
         if (curl_errno($curl)) {
-            throw new RuntimeException(curl_error($curl));
+            throw new \RuntimeException(curl_error($curl));
         }
         
         // Close request and clear some resources

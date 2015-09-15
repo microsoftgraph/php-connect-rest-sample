@@ -1,4 +1,6 @@
 <?php
+namespace Microsoft\Office365\UnifiedAPI\Connect;
+
 /**
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  *  See full license at the bottom of this file.
@@ -97,7 +99,7 @@ require_once 'MailManager.php';
                         </p>
             <?php
                 } 
-                catch (RuntimeException $e) 
+                catch (\RuntimeException $e) 
                 {
             ?>
                         <p 
