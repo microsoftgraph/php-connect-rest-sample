@@ -17,44 +17,60 @@
  */
  
 // We use the session to store tokens and data about the user. 
-if (session_status() == PHP_SESSION_NONE)
-{
+if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
 require_once 'Constants.php';
 require_once 'RequestManager.php';
 
-/*! @class AuthenticationManager
-    @abstract Provides methods to authenticate to Azure AD and store tokens and user information
+/** 
+ *  Provides methods to authenticate to Azure AD and 
+ *  store tokens and user information 
+ *
+ *  @class    AuthenticationManager
+ *  @category Code_Sample
+ *  @package  O365-PHP-Unified-API-Connect
+ *  @author   Ricardo Loo <ricardol@microsoft.com>
+ *  @license  MIT License
+ *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
  */
 class AuthenticationManager
 {
-    
-    /*! @function connect
-        @abstract Starts the authentication flow. At the end, the user should be redirected to callback.php 
+    /**
+     *  Starts the authentication flow. At the end, 
+     *  the user should be redirected to callback.php 
+     *
+     *  @function connect
+     *  @return   Nothing, redirects browser to authorize endpoint
      */
     public static function connect()
     {
-        // Redirect the browser to the authorization endpoint. Auth endpoint is:
+        // Redirect the browser to the authorization endpoint. Auth endpoint is
         // https://login.microsoftonline.com/common/oauth2/authorize
         $redirect = Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT . 
-                    '?response_type=code&client_id=' . urlencode(Constants::CLIENT_ID) . 
+                    '?response_type=code' . 
+                    '&client_id=' . urlencode(Constants::CLIENT_ID) . 
                     '&redirect_uri=' . urlencode(Constants::REDIRECT_URI);
         header("Location: {$redirect}");
         exit();
     }
     
-    /*! @function acquireToken
-        @abstract Contacts the token endpoint to get OAuth tokens including an access token
-        that can be used to send an authenticated request to the Office 365 unified API.
-        It also stores user information, like given name, in session variables.  
+    /**
+     *  Contacts the token endpoint to get OAuth tokens including an access token
+     *  that can be used to send an authenticated request to the 
+     *  Office 365 unified API.
+     *  It also stores user information, like given name, in session variables. 
+     *
+     *  @function acquireToken
+     *  @return   Nothing, stores tokens in session variables.
      */
     public static function acquireToken()
     {
         $tokenEndpoint = Constants::AUTHORITY_URL . Constants::TOKEN_ENDPOINT;
         
-        // Send a POST request to the token endpoint to retrieve tokens. Token endpoint is:
+        // Send a POST request to the token endpoint to retrieve tokens.
+        // Token endpoint is:
         // https://login.microsoftonline.com/common/oauth2/token
         $response = RequestManager::sendPostRequest(
             $tokenEndpoint, 
@@ -81,14 +97,15 @@ class AuthenticationManager
         // resource - The App ID URI of the web API (secured resource).
         // scope - Impersonation permissions granted to the client application.
         // token_type - Indicates the token type value.
-        foreach ($jsonResponse as $key=>$value) 
-        {
+        foreach ($jsonResponse as $key=>$value) {
             $_SESSION[$key] = $value;
         }
         
         // The id token is a JWT token that contains information about the user
         // It's a base64 coded string that has a header and payload 
-        $decodedAccessTokenPayload = base64_decode(explode('.', $_SESSION['id_token'])[1]);            
+        $decodedAccessTokenPayload = base64_decode(
+            explode('.', $_SESSION['id_token'])[1]
+        );            
         $jsonAccessTokenPayload = json_decode($decodedAccessTokenPayload, true);
         
         // The id token payload has the following parameters:
@@ -101,31 +118,40 @@ class AuthenticationManager
         // nbf - Not before time. The time when the token becomes effective.
         // oid - Object identifier (ID) of the user object in Azure AD.
         // sub - Token subject identifier.
-        // tid - Tenant identifier (ID) of the Azure AD tenant that issued the token.
+        // tid - Tenant identifier of the Azure AD tenant that issued the token.
         // unique_name - A unique identifier for that can be displayed to the user.
         // upn - User principal name of the user.
         // ver - Version.
-        foreach ($jsonAccessTokenPayload as $key=>$value) 
-        {
+        foreach ($jsonAccessTokenPayload as $key=>$value) {
             $_SESSION[$key] = $value;
         }
     }
     
-    /*! @function disconnect
-        @abstract Clear the session and redirect the browser to Azure's logout endpoint.
+    /**
+     *  Clear the session and redirect the browser to Azure's logout endpoint. 
+     *
+     *  @function disconnect
+     *  @return   Nothing, redirects browser to Connect.php page.
      */
     public static function disconnect()
     {
         session_destroy();
         
         $connectUrl = (@$_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://';
-        $connectUrl .= $_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
+        $connectUrl .= $_SERVER['SERVER_NAME'] . ':' .
+            $_SERVER['SERVER_PORT'] . 
+            $_SERVER['REQUEST_URI'];
         
         // Get the full URL of the connect.php to send it to the logout endpoint
-        $connectUrl = substr($connectUrl, 0, strrpos( $connectUrl, '/') ) . '/Connect.php';
+        $connectUrl = substr(
+            $connectUrl, 
+            0, 
+            strrpos($connectUrl, '/')
+        ) . '/Connect.php';
 
         // Logout endpoint is in the form
-        // https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=<full_url_of_your_start_page> 
+        // https://login.microsoftonline.com/common/oauth2/logout
+        // ?post_logout_redirect_uri=<full_url_of_your_start_page> 
         $redirect = Constants::AUTHORITY_URL . Constants::LOGOUT_ENDPOINT . 
                     '?post_logout_redirect_uri=' . urlencode($connectUrl);
         header("Location: " . $redirect);
@@ -135,7 +161,8 @@ class AuthenticationManager
     
 // *********************************************************
 //
-// O365-PHP-Unified-API-Connect, https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
+// O365-PHP-Unified-API-Connect
+// https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
 //
 // Copyright (c) Microsoft Corporation
 // All rights reserved.
