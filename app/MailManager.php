@@ -12,22 +12,34 @@
  *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
  */
 
-if (session_status() == PHP_SESSION_NONE) 
-{
+if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 require_once 'Constants.php';
 require_once 'RequestManager.php';
 
-/*! @class MailManager
-    @abstract Handles the creation of the email and sends the request to the Office 365 unified endpoint
+/** 
+ *  Handles the creation of the email and sends the request 
+ *  to the Office 365 unified endpoint
+ *
+ *  @class    MailManager
+ *  @category Code_Sample
+ *  @package  O365-PHP-Unified-API-Connect
+ *  @author   Ricardo Loo <ricardol@microsoft.com>
+ *  @license  MIT License
+ *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
  */
 class MailManager
 {
     
-    /*! @function sendWelcomeMail
-        @abstract Builds the email message and uses RequestManager to send a POST request to the 
-        sendmail endpoint in the unified API.    
+    /**
+     *  Builds the email message and uses RequestManager to send a POST request 
+     *  to the sendmail endpoint in the unified API.
+     *
+     *  @param string $recipient - The recipient of the email.
+     *
+     *  @function sendWelcomeMail
+     *  @return   1 - success
      */
     public static function sendWelcomeMail($recipient)
     {
@@ -36,7 +48,7 @@ class MailManager
         // Build the HTTP request payload (the Message object).
         $email = "{
             Message: {
-            Subject: 'Welcome to Office 365 development with PHP and the Office 365 Connect sample',
+            Subject: 'Welcome to Office 365 development with PHP',
             Body: {
                 ContentType: 'HTML',
                 Content: '{$emailBody}'
@@ -52,23 +64,29 @@ class MailManager
             SaveToSentItems: true
             }";
             
-        // Send the email request to the sendmail endpoint, which is in the following URI:
+        // Send the email request to the sendmail endpoint, 
+        // which is in the following URI:
         // https://graph.microsoft.com/beta/me/sendMail
         // Note that the access token is attached in the Authorization header
         RequestManager::sendPostRequest(
             Constants::RESOURCE_ID . Constants::SENDMAIL_ENDPOINT,
             array(
                 'Authorization: Bearer ' . $_SESSION['access_token'],
-                'Content-Type: application/json;odata.metadata=minimal;odata.streaming=true'
+                'Content-Type: application/json;' . 
+                              'odata.metadata=minimal;' .
+                              'odata.streaming=true'
             ),
             $email
         );
+        
+        return 1;
     }
 }
     
 // *********************************************************
 //
-// O365-PHP-Unified-API-Connect, https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
+// O365-PHP-Unified-API-Connect, 
+// https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
 //
 // Copyright (c) Microsoft Corporation
 // All rights reserved.
