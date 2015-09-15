@@ -39,7 +39,7 @@ class MailManager
      *  @param string $recipient - The recipient of the email.
      *
      *  @function sendWelcomeMail
-     *  @return   1 - success
+     *  @return   Nothing, passes RuntimeException from RequestManager on error
      */
     public static function sendWelcomeMail($recipient)
     {
@@ -83,8 +83,6 @@ class MailManager
             ),
             $email
         );
-        
-        return 1;
     }
 }
     
