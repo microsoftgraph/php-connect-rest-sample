@@ -16,7 +16,9 @@
     @abstract This is the start page. It should display minimal UI emphasizing 
               the "connect" button.
  */
- 
+
+namespace Microsoft\Office365\UnifiedAPI\Connect;
+
 require_once'AuthenticationManager.php';
 
 // User has clicked the "connect" button. Start the authentication flow.

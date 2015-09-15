@@ -16,6 +16,8 @@
     @abstract A PHP project that shows how to use the Office 365 unified API 
  */
  
+namespace Microsoft\Office365\UnifiedAPI\Connect;
+ 
 // We use the session to store tokens and data about the user. 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();

@@ -11,6 +11,8 @@
  *  @license  MIT License
  *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
  */
+
+namespace Microsoft\Office365\UnifiedAPI\Connect;
  
 /** 
  *  Stores constant and configuration values used through the app 

@@ -12,6 +12,8 @@
  *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
  */
 
+namespace Microsoft\Office365\UnifiedAPI\Connect;
+
 require_once 'Constants.php';
 
 /** 
@@ -68,7 +70,7 @@ class RequestManager
         $response = curl_exec($curl);
         // Check for errors
         if (curl_errno($curl)) {
-            throw new RuntimeException(curl_error($curl));
+            throw new \RuntimeException(curl_error($curl));
         }
         
         // Close request and clear some resources

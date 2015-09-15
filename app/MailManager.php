@@ -12,6 +12,8 @@
  *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
  */
 
+namespace Microsoft\Office365\UnifiedAPI\Connect;
+
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }

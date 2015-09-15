@@ -16,7 +16,9 @@
     @abstract The page that the user will be redirected to after 
               Azure AD finishes the authentication flow.
  */
- 
+
+namespace Microsoft\Office365\UnifiedAPI\Connect;
+
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -45,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['code'])) {
         header('Location: SendMail.php');
         exit();
     } 
-    catch (RuntimeException $e)
+    catch (\RuntimeException $e)
     {
         echo 'Something went wrong, couldn\'t get tokens: ' . $e->getMessage();
     }

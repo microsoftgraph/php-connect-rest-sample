@@ -16,7 +16,9 @@
     @abstract User is directed to this page after the web app gets tokens.
               The page offers UI to send a welcome email to the specified account. 
  */
- 
+
+namespace Microsoft\Office365\UnifiedAPI\Connect;
+
 //We store user name, id, and tokens in session variables
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -97,7 +99,7 @@ require_once 'MailManager.php';
                         </p>
             <?php
                 } 
-                catch (RuntimeException $e) 
+                catch (\RuntimeException $e) 
                 {
             ?>
                         <p 
