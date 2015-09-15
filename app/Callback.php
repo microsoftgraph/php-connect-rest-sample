@@ -13,33 +13,28 @@
  */
  
 /*! 
-    @abstract The page that the user will be redirected to after Azure AD finishes the authentication flow.
+    @abstract The page that the user will be redirected to after 
+              Azure AD finishes the authentication flow.
  */
  
-if (session_status() == PHP_SESSION_NONE)
-{
+if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 require_once 'AuthenticationManager.php';
 
 // Get the authorization code and other parameters from the query string
 // and store them in the session.
-if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['code'])) 
-{
-    if(isset($_GET['admin_consent']))
-    {
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['code'])) {
+    if (isset($_GET['admin_consent'])) {
         $_SESSION['admin_consent'] = $_GET['admin_consent'];
     }
-    if(isset($_GET['code']))
-    {
+    if (isset($_GET['code'])) {
         $_SESSION['code'] =  $_GET['code'];
     }
-    if(isset($_GET['session_state']))
-    {
+    if (isset($_GET['session_state'])) {
         $_SESSION['session_state'] =  $_GET['session_state'];
     }
-    if(isset($_GET['state']))
-    {
+    if (isset($_GET['state'])) {
         $_SESSION['state'] =  $_GET['state'];
     }
     
@@ -58,7 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['code']))
     
 // *********************************************************
 //
-// O365-PHP-Unified-API-Connect, https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
+// O365-PHP-Unified-API-Connect
+// https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
 //
 // Copyright (c) Microsoft Corporation
 // All rights reserved.

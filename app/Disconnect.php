@@ -21,7 +21,8 @@ AuthenticationManager::disconnect();
     
 // *********************************************************
 //
-// O365-PHP-Unified-API-Connect, https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
+// O365-PHP-Unified-API-Connect
+// https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
 //
 // Copyright (c) Microsoft Corporation
 // All rights reserved.

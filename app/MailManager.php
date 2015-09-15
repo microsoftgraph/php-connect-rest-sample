@@ -36,15 +36,20 @@ class MailManager
      *  Builds the email message and uses RequestManager to send a POST request 
      *  to the sendmail endpoint in the unified API.
      *
-     *  @param string $recipient - The recipient of the email.
+     *  @param string $recipient The recipient of the email.
      *
      *  @function sendWelcomeMail
-     *  @return   1 - success
+     *  @return   Nothing, passes RuntimeException from RequestManager on error
      */
     public static function sendWelcomeMail($recipient)
     {
         $emailBody = file_get_contents('MailTemplate.html');
-        $emailBody = str_replace('{given_name}', $_SESSION['given_name'], $emailBody);
+
+        $emailBody = str_replace(
+            '{given_name}',
+            $_SESSION['given_name'],
+            $emailBody
+        );
         
         // Build the HTTP request payload (the Message object).
         $email = "{
@@ -79,14 +84,12 @@ class MailManager
             ),
             $email
         );
-        
-        return 1;
     }
 }
     
 // *********************************************************
 //
-// O365-PHP-Unified-API-Connect, 
+// O365-PHP-Unified-API-Connect
 // https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
 //
 // Copyright (c) Microsoft Corporation
