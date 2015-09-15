@@ -1,14 +1,15 @@
 <?php
-/*
- *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
+/**
+ *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+ *  See full license at the bottom of this file.
  */
  
-    /*! 
-        @abstract Users are redirected to this page to initiate the disconnect flow
-     */
-    require_once('AuthenticationManager.php');
-    
-    AuthenticationManager::disconnect();
+/*! 
+    @abstract Users are redirected to this page to initiate the disconnect flow
+ */
+require_once 'AuthenticationManager.php';
+
+AuthenticationManager::disconnect();
     
 // *********************************************************
 //

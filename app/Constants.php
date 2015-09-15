@@ -1,22 +1,23 @@
 <?php
-/*
- *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
+/**
+ *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+ *  See full license at the bottom of this file.
  */
  
-    /*! @class Constants
-        @abstract Stores constant and configuration values used through the app
-     */
-    class Constants{
-       const CLIENT_ID = '<YOUR CLIENT ID HERE>';
-       const CLIENT_SECRET = '<YOUR CLIENT SECRET HERE>';
-       const REDIRECT_URI = '<YOUR REDIRECT URI HERE>';
-	   const AUTHORITY_URL = 'https://login.microsoftonline.com/common';
-	   const AUTHORIZE_ENDPOINT = '/oauth2/authorize';
-	   const TOKEN_ENDPOINT = '/oauth2/token';
-       const LOGOUT_ENDPOINT = '/oauth2/logout';
-       const RESOURCE_ID = 'https://graph.microsoft.com';
-       const SENDMAIL_ENDPOINT = '/beta/me/sendMail';
-    }
+/*! @class Constants
+    @abstract Stores constant and configuration values used through the app
+ */
+class Constants{
+   const CLIENT_ID = '<YOUR CLIENT ID HERE>';
+   const CLIENT_SECRET = '<YOUR CLIENT SECRET HERE>';
+   const REDIRECT_URI = '<YOUR REDIRECT URI HERE>';
+   const AUTHORITY_URL = 'https://login.microsoftonline.com/common';
+   const AUTHORIZE_ENDPOINT = '/oauth2/authorize';
+   const TOKEN_ENDPOINT = '/oauth2/token';
+   const LOGOUT_ENDPOINT = '/oauth2/logout';
+   const RESOURCE_ID = 'https://graph.microsoft.com';
+   const SENDMAIL_ENDPOINT = '/beta/me/sendMail';
+}
     
 // *********************************************************
 //
