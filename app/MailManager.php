@@ -43,7 +43,8 @@ class MailManager
      */
     public static function sendWelcomeMail($recipient)
     {
-        $emailBody = file_get_contents('MailTemplate.html'); 
+        $emailBody = file_get_contents('MailTemplate.html');
+        $emailBody = str_replace($emailBody, $_SESSION['given_name'], '{given_name}');
         
         // Build the HTTP request payload (the Message object).
         $email = "{
