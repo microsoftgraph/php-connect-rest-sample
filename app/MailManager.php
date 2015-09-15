@@ -46,10 +46,15 @@ class MailManager
     public static function sendWelcomeMail($recipient)
     {
         $emailBody = file_get_contents('MailTemplate.html');
+        
+        // Use the given name if it exists, otherwise, use the alias
+        $greetingName = isset($_SESSION['given_name'])
+                        ? $_SESSION['given_name'] 
+                        : explode('@', $_SESSION['unique_name'])[0];
 
         $emailBody = str_replace(
             '{given_name}',
-            $_SESSION['given_name'],
+            $greetingName,
             $emailBody
         );
         
