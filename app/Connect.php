@@ -20,8 +20,7 @@
 require_once'AuthenticationManager.php';
 
 // User has clicked the "connect" button. Start the authentication flow.
-if ($_SERVER['REQUEST_METHOD'] === 'POST') 
-{
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     AuthenticationManager::connect();
 }
 
@@ -36,8 +35,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
   <title>O365 Connect sample</title>
 
   <!-- Third party dependencies. -->
-  <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.css">
-  <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.css">
+  <link 
+      rel="stylesheet" 
+      href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.css">
+  <link 
+      rel="stylesheet" 
+      href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.css">
   
   <!-- App code. -->
   <link rel="stylesheet" href="styles.css">
@@ -71,7 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 <?php
 // *********************************************************
 //
-// O365-PHP-Unified-API-Connect, https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
+// O365-PHP-Unified-API-Connect
+// https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
 //
 // Copyright (c) Microsoft Corporation
 // All rights reserved.
