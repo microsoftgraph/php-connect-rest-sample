@@ -7,7 +7,8 @@
 /*! @class Constants
     @abstract Stores constant and configuration values used through the app
  */
-class Constants{
+class Constants
+{
    const CLIENT_ID = '<YOUR CLIENT ID HERE>';
    const CLIENT_SECRET = '<YOUR CLIENT SECRET HERE>';
    const REDIRECT_URI = '<YOUR REDIRECT URI HERE>';

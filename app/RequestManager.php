@@ -10,7 +10,8 @@ require_once 'Constants.php';
     @abstract Sends POST requests to the specified endpoint. It's used by AuthenticationManager to get OAuth tokens and 
     MailManager to contact the Office 365 unified endpoint.
  */
-class RequestManager{
+class RequestManager
+{
     
     /*! @function sendPostRequest
         @abstract Helper method to send a POST request.
@@ -19,7 +20,8 @@ class RequestManager{
         @param $body array - Array of key-value pairs that form the body of the request.
         @result string - The raw response returned by the endpoint.
      */
-    public static function sendPostRequest($endpoint, $headers, $body) {
+    public static function sendPostRequest($endpoint, $headers, $body) 
+    {
         $curl = curl_init();
         json_encode($body);
         

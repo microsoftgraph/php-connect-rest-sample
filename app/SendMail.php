@@ -10,7 +10,8 @@
  */
  
 //We store user name, id, and tokens in session variables
-if (session_status() == PHP_SESSION_NONE) {
+if (session_status() == PHP_SESSION_NONE)
+{
     session_start();
 }
 require_once 'MailManager.php';
@@ -58,13 +59,17 @@ require_once 'MailManager.php';
         <div>
             <?php
                 // The user clicked the "Send mail" button 
-                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recipient'])) {
-                    try {
+                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recipient']))
+                {
+                    try
+                    {
                         MailManager::sendWelcomeMail($_POST['recipient']);
             ?>
                         <p class="ms-font-m ms-fontColor-green">Successfully sent an email to <?=$_POST['recipient']?>!</p>
             <?php
-                    } catch (RuntimeException $e) {
+                    } 
+                    catch (RuntimeException $e) 
+                    {
             ?>
                         <p class="ms-font-m ms-fontColor-redDark">Something went wrong, couldn't send an email.</p>
             <?php            

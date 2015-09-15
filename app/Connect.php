@@ -10,9 +10,11 @@
 require_once'AuthenticationManager.php';
 
 // User has clicked the "connect" button. Start the authentication flow.
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') 
+{
     AuthenticationManager::connect();
 }
+
 ?>
       
 <!DOCTYPE html>
