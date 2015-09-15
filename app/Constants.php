@@ -1,6 +1,4 @@
 <?php
-namespace Microsoft\Office365\UnifiedAPI\Connect;
-
 /**
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  *  See full license at the bottom of this file.
@@ -13,6 +11,8 @@ namespace Microsoft\Office365\UnifiedAPI\Connect;
  *  @license  MIT License
  *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
  */
+
+namespace Microsoft\Office365\UnifiedAPI\Connect;
  
 /** 
  *  Stores constant and configuration values used through the app 

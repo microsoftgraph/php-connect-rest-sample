@@ -1,6 +1,4 @@
 <?php
-namespace Microsoft\Office365\UnifiedAPI\Connect;
-
 /**
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  *  See full license at the bottom of this file.
@@ -17,6 +15,8 @@ namespace Microsoft\Office365\UnifiedAPI\Connect;
 /*! @header Office 365 PHP Connect sample using unified API (preview)
     @abstract A PHP project that shows how to use the Office 365 unified API 
  */
+ 
+namespace Microsoft\Office365\UnifiedAPI\Connect;
  
 // We use the session to store tokens and data about the user. 
 if (session_status() == PHP_SESSION_NONE) {

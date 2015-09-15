@@ -1,6 +1,4 @@
 <?php
-namespace Microsoft\Office365\UnifiedAPI\Connect;
-
 /**
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  *  See full license at the bottom of this file.
@@ -18,7 +16,9 @@ namespace Microsoft\Office365\UnifiedAPI\Connect;
     @abstract The page that the user will be redirected to after 
               Azure AD finishes the authentication flow.
  */
- 
+
+namespace Microsoft\Office365\UnifiedAPI\Connect;
+
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }

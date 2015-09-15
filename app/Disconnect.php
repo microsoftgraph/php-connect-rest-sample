@@ -1,6 +1,4 @@
 <?php
-namespace Microsoft\Office365\UnifiedAPI\Connect;
-
 /**
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  *  See full license at the bottom of this file.
@@ -17,6 +15,9 @@ namespace Microsoft\Office365\UnifiedAPI\Connect;
 /*! 
     @abstract Users are redirected to this page to initiate the disconnect flow
  */
+
+namespace Microsoft\Office365\UnifiedAPI\Connect;
+
 require_once 'AuthenticationManager.php';
 
 AuthenticationManager::disconnect();

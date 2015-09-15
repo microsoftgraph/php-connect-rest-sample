@@ -1,6 +1,4 @@
 <?php
-namespace Microsoft\Office365\UnifiedAPI\Connect;
-
 /**
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  *  See full license at the bottom of this file.
@@ -18,7 +16,9 @@ namespace Microsoft\Office365\UnifiedAPI\Connect;
     @abstract This is the start page. It should display minimal UI emphasizing 
               the "connect" button.
  */
- 
+
+namespace Microsoft\Office365\UnifiedAPI\Connect;
+
 require_once'AuthenticationManager.php';
 
 // User has clicked the "connect" button. Start the authentication flow.
