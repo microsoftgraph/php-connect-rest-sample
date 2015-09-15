@@ -2,11 +2,21 @@
 /**
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  *  See full license at the bottom of this file.
+ * 
+ *  PHP version 5
+ *
+ *  @category Code_Sample
+ *  @package  O365-PHP-Unified-API-Connect
+ *  @author   Ricardo Loo <ricardol@microsoft.com>
+ *  @license  MIT License
+ *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
  */
  
 /*! 
-    @abstract This is the start page. It should display minimal UI emphasizing the "connect" button.
+    @abstract This is the start page. It should display minimal UI emphasizing 
+              the "connect" button.
  */
+ 
 require_once'AuthenticationManager.php';
 
 // User has clicked the "connect" button. Start the authentication flow.

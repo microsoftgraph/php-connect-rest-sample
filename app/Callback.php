@@ -2,11 +2,20 @@
 /**
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  *  See full license at the bottom of this file.
+ * 
+ *  PHP version 5
+ *
+ *  @category Code_Sample
+ *  @package  O365-PHP-Unified-API-Connect
+ *  @author   Ricardo Loo <ricardol@microsoft.com>
+ *  @license  MIT License
+ *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
  */
  
 /*! 
     @abstract The page that the user will be redirected to after Azure AD finishes the authentication flow.
  */
+ 
 if (session_status() == PHP_SESSION_NONE)
 {
     session_start();

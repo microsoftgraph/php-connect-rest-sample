@@ -2,11 +2,19 @@
 /**
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  *  See full license at the bottom of this file.
+ * 
+ *  PHP version 5
+ *
+ *  @category Code_Sample
+ *  @package  O365-PHP-Unified-API-Connect
+ *  @author   Ricardo Loo <ricardol@microsoft.com>
+ *  @license  MIT License
+ *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
  */
  
 /*! 
-    @abstract User is directed to this page after the web app can get tokens and user information.
-    The page offers UI to send a welcome email to the specified account. 
+    @abstract User is directed to this page after the web app gets tokens.
+              The page offers UI to send a welcome email to the specified account. 
  */
  
 //We store user name, id, and tokens in session variables
