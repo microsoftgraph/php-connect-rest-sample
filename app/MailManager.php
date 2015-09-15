@@ -44,7 +44,11 @@ class MailManager
     public static function sendWelcomeMail($recipient)
     {
         $emailBody = file_get_contents('MailTemplate.html');
-        $emailBody = str_replace($emailBody, $_SESSION['given_name'], '{given_name}');
+        $emailBody = str_replace(
+            $emailBody,
+            $_SESSION['given_name'],
+            '{given_name}'
+        );
         
         // Build the HTTP request payload (the Message object).
         $email = "{
@@ -86,7 +90,7 @@ class MailManager
     
 // *********************************************************
 //
-// O365-PHP-Unified-API-Connect, 
+// O365-PHP-Unified-API-Connect
 // https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
 //
 // Copyright (c) Microsoft Corporation
