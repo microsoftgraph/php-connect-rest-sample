@@ -1,18 +1,28 @@
 <?php
-/*
- *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
+/**
+ *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+ *  See full license at the bottom of this file.
+ * 
+ *  PHP version 5
+ *
+ *  @category Code_Sample
+ *  @package  O365-PHP-Unified-API-Connect
+ *  @author   Ricardo Loo <ricardol@microsoft.com>
+ *  @license  MIT License
+ *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
  */
  
-    /*! 
-        @abstract Users are redirected to this page to initiate the disconnect flow
-     */
-    require_once('AuthenticationManager.php');
-    
-    AuthenticationManager::disconnect();
+/*! 
+    @abstract Users are redirected to this page to initiate the disconnect flow
+ */
+require_once 'AuthenticationManager.php';
+
+AuthenticationManager::disconnect();
     
 // *********************************************************
 //
-// O365-PHP-Unified-API-Connect, https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
+// O365-PHP-Unified-API-Connect
+// https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
 //
 // Copyright (c) Microsoft Corporation
 // All rights reserved.

@@ -1,17 +1,29 @@
 <?php
-/*
- *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license at the bottom of this file.
+/**
+ *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+ *  See full license at the bottom of this file.
+ * 
+ *  PHP version 5
+ *
+ *  @category Code_Sample
+ *  @package  O365-PHP-Unified-API-Connect
+ *  @author   Ricardo Loo <ricardol@microsoft.com>
+ *  @license  MIT License
+ *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
  */
  
-    /*! 
-        @abstract This is the start page. It should display minimal UI emphasizing the "connect" button.
-     */
-    require_once('AuthenticationManager.php');
-    
-    // User has clicked the "connect" button. Start the authentication flow.
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        AuthenticationManager::connect();
-    }
+/*! 
+    @abstract This is the start page. It should display minimal UI emphasizing 
+              the "connect" button.
+ */
+ 
+require_once'AuthenticationManager.php';
+
+// User has clicked the "connect" button. Start the authentication flow.
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    AuthenticationManager::connect();
+}
+
 ?>
       
 <!DOCTYPE html>
@@ -23,8 +35,12 @@
   <title>O365 Connect sample</title>
 
   <!-- Third party dependencies. -->
-  <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.css">
-  <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.css">
+  <link 
+      rel="stylesheet" 
+      href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.css">
+  <link 
+      rel="stylesheet" 
+      href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.components.css">
   
   <!-- App code. -->
   <link rel="stylesheet" href="styles.css">
@@ -58,7 +74,8 @@
 <?php
 // *********************************************************
 //
-// O365-PHP-Unified-API-Connect, https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
+// O365-PHP-Unified-API-Connect
+// https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
 //
 // Copyright (c) Microsoft Corporation
 // All rights reserved.
