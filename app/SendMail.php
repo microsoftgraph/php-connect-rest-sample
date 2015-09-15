@@ -25,6 +25,11 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 require_once 'MailManager.php';
 
+// Use the given name if it exists, otherwise, use the alias
+$greetingName = isset($_SESSION['given_name']) 
+                ? $_SESSION['given_name'] 
+                : explode('@', $_SESSION['unique_name'])[0];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -66,7 +71,7 @@ require_once 'MailManager.php';
     <div class="ms-Grid-col ms-u-mdPush1 ms-u-md9 ms-u-lgPush1 ms-u-lg6">
     <div>
         <h2 class="ms-font-xxl ms-fontWeight-semibold">
-            Hi, <?php echo $_SESSION['given_name']; ?>!
+            Hi, <?php echo $greetingName; ?>!
         </h2>
         <p class="ms-font-xl">
             You're now connected to Office 365. Click the mail icon below to send a 
