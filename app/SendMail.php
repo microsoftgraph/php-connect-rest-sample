@@ -74,7 +74,7 @@ $greetingName = isset($_SESSION['given_name'])
             Hi, <?php echo $greetingName; ?>!
         </h2>
         <p class="ms-font-xl">
-            You're now connected to Office 365. Click the mail icon below to send a 
+            You're now connected to Office 365. Click the button below to send a 
             message from your account using the Office 365 unified API.
         </p>
         <div class="ms-TextField">
