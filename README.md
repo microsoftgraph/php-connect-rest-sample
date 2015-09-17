@@ -10,7 +10,7 @@ Connecting to Office 365 is the first step every app must take to start working 
 
 To use the Office 365 PHP Connect sample, you need the following:
 
-* [PHP](http://php.net/). PHP is required to run the sample on a development server. The sample has been tested on PHP 5.6 on Internet Information Services and Apache Server.
+* [PHP](http://php.net/) is required to run the sample on a development server. The sample has been tested on PHP 5.6 on Internet Information Services and Apache Server.
 	* Client URL (cURL) module. The web application uses cURL to issue requests to REST endpoints. 
 * An Office 365 account. You can sign up for [an Office 365 Developer subscription](https://portal.office.com/Signup/Signup.aspx?OfferId=6881A1CB-F4EB-4db3-9F18-388898DAF510&DL=DEVELOPERPACK&ali=1#0) that includes the resources that you need to start building Office 365 apps.
 
@@ -18,7 +18,7 @@ To use the Office 365 PHP Connect sample, you need the following:
 * A Microsoft Azure tenant to register your application. Azure Active Directory (AD) provides identity services that applications use for authentication and authorization. A trial subscription can be acquired here: [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
      > Important: You also need to make sure your Azure subscription is bound to your Office 365 tenant. To do this, see the Active Directory team's blog post, [Creating and Managing Multiple Windows Azure Active Directories](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx). The section **Adding a new directory** will explain how to do this. You can also see [Set up your Office 365 development environment](https://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription) and the section **Associate your Office 365 account with Azure AD to create and manage apps** for more information.
-* A client ID, client secret and redirect URI values of an application registered in Azure. This sample application must be granted the **Send mail as signed-in user** permission for the **Office 365 unified API (preview)**. [Add a web application in Azure](https://msdn.microsoft.com/en-us/library/azure/dn132599.aspx#BKMK_Adding) and [grant proper permissions](https://github.com/OfficeDev/O365-Android-Unified-API-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure) to it.
+* A client ID, key and reply URL values of an application registered in Azure. This sample application must be granted the **Send mail as signed-in user** permission for the **Office 365 unified API (preview)**. [Add a web application in Azure](https://msdn.microsoft.com/en-us/library/azure/dn132599.aspx#BKMK_Adding) and [grant proper permissions](https://github.com/OfficeDev/O365-Android-Unified-API-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure) to it.
 
      > Note: During the app registration process, make sure to specify **http://localhost/your\_web\_application/Callback.php** as the **Sign-on URL**.
 
@@ -26,9 +26,9 @@ To use the Office 365 PHP Connect sample, you need the following:
 
 1. Map a web application in your web server to the **app** folder in your local repository. 
 2. Using your favorite IDE, open **Constants.php** in the *app* folder.
-3. Replace *{YOUR CLIENT ID HERE}* with the client ID of your registered Azure application.
-4. Replace *{YOUR CLIENT SECRET HERE}* with the client secret of your registered Azure application.
-5. Replace *{YOUR REDIRECT URI HERE}* with the reply URL of your registered Azure application. 
+3. Replace *{YOUR AZURE CLIENT ID HERE}* with the client ID of your registered Azure application.
+4. Replace *{YOUR AZURE KEY HERE}* with the client secret of your registered Azure application.
+5. Replace *{YOUR AZURE REPLY URL HERE}* with the reply URL of your registered Azure application. 
 6. Navigate to ```http://localhost/<your_web_application>/Connect.php``` in your web browser.
 
 ## Troubleshooting
