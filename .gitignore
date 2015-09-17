@@ -1,12 +1,10 @@
 # CakePHP 3
-
 /vendor/*
 /config/app.php
 /tmp/*
 /logs/*
 
 # CakePHP 2
-
 /app/tmp/*
 /app/Config/core.php
 /app/Config/database.php
@@ -16,5 +14,14 @@
 fuel/app/logs/*/*/*
 fuel/app/cache/*/*
 
+# Laravel
+/bootstrap/compiled.php
+.env.*.php
+.env.php
+.env
+
 # Visual Studio Code
+.vscode
+
+# Eclipse
 .settings
