@@ -21,7 +21,7 @@ namespace Microsoft\Office365\UnifiedAPI\Connect;
 
 require_once'AuthenticationManager.php';
 
-// User has clicked the "connect" button. Start the authentication flow.
+// User clicked the "connect" button. Start the authentication flow.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     AuthenticationManager::connect();
 }

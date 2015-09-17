@@ -57,7 +57,8 @@ class RequestManager
             )
         );
         
-        // Option to disable certificate verification. Do not use on production env
+        // The following curl options can be used in development to debug the code.
+        // Option to disable certificate verification. Do not use on production env.
         // curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
         // Option to set a proxy for curl to use. 
         // Useful if you want to review traffic with a tool like Fiddler. 

@@ -14,7 +14,7 @@
  
 /*! 
     @abstract The page that the user will be redirected to after 
-              Azure AD finishes the authentication flow.
+              Azure Active Directory (AD) finishes the authentication flow.
  */
 
 namespace Microsoft\Office365\UnifiedAPI\Connect;

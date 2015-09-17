@@ -118,11 +118,12 @@ class AuthenticationManager
         // iat - Issued at time.
         // iss - Identifies the token issuer.
         // nbf - Not before time. The time when the token becomes effective.
-        // oid - Object identifier (ID) of the user object in Azure AD.
+        // oid - Object identifier (ID) of the user object 
+        //       in Azure Active Directory (AD).
         // sub - Token subject identifier.
         // tid - Tenant identifier of the Azure AD tenant that issued the token.
-        // unique_name - A unique identifier for that can be displayed to the user.
-        // upn - User principal name of the user.
+        // unique_name - A unique identifier that can be displayed to the user.
+        // upn - User principal name.
         // ver - Version.
         foreach ($jsonAccessTokenPayload as $key=>$value) {
             $_SESSION[$key] = $value;
@@ -130,7 +131,7 @@ class AuthenticationManager
     }
     
     /**
-     *  Clear the session and redirect the browser to Azure's logout endpoint. 
+     *  Clear the session and redirect the browser to Azure logout endpoint. 
      *
      *  @function disconnect
      *  @return   Nothing, redirects browser to Connect.php page.
