@@ -23,7 +23,8 @@ To use the Office 365 PHP Connect sample, you need the following:
      You also need to make sure your Azure subscription is bound to your Office 365 tenant. To do this, see the Active Directory team's blog post, [Creating and Managing Multiple Windows Azure Active Directories](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx). The section **Adding a new directory** will explain how to do this. You can also see [Set up your Office 365 development environment](https://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription) and the section **Associate your Office 365 account with Azure AD to create and manage apps** for more information.
 * A [```client ID```](app/Constants.php#L29), [```key```](app/Constants.php#L30), and [```reply URL```](app/Constants.php#L31) values of an application registered in Azure. This sample application must be granted the **Send mail as signed-in user** permission for the **Office 365 unified API (preview)**. For details see [Register your brower-based web app with the Azure Management Portal](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterWebApp) and [grant proper permissions to the Connect application](https://github.com/OfficeDev/O365-Android-Unified-API-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
 
-     > Note: During the app registration process, make sure to specify **http://localhost/your\_web\_application/Callback.php** as the **Sign-on URL**.
+     > **Note:** <br />
+     During the app registration process, make sure to specify **http://localhost/your\_web\_application/Callback.php** as the **Sign-on URL**.
 
 ## Configure and run the app
 
