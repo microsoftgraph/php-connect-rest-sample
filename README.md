@@ -66,4 +66,3 @@ Questions about Office 365 development in general should be posted to [Stack Ove
 
 ## Copyright
 Copyright (c) 2015 Microsoft. All rights reserved.
-
