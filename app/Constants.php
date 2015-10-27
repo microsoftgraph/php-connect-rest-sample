@@ -28,7 +28,7 @@ class Constants
 {
     const CLIENT_ID = '<YOUR AZURE CLIENT ID HERE>';
     const CLIENT_SECRET = '<YOUR AZURE KEY HERE>';
-    const REDIRECT_URI = '<YOUR AZURE REPLY URL HERE>';
+    const REDIRECT_URI = 'http://localhost:8000/Callback.php';
     const AUTHORITY_URL = 'https://login.microsoftonline.com/common';
     const AUTHORIZE_ENDPOINT = '/oauth2/authorize';
     const TOKEN_ENDPOINT = '/oauth2/token';
