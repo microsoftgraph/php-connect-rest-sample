@@ -13,7 +13,7 @@ Connecting to Office 365 is the first step every app must take to start working 
 
 To use the Office 365 PHP Connect sample, you need the following:
 
-* [PHP](http://php.net/) is required to run the sample on a development server. The instructions in this sample use the PHP 5.4 built-in web server. However, the sample has been tested on PHP 5.6 on Internet Information Services and Apache Server.
+* [PHP](http://php.net/) is required to run the sample on a development server. The instructions in this sample use the PHP 5.4 built-in web server. However, the sample has also been tested on Internet Information Services and Apache Server.
 	* Client URL (cURL) module. The web application uses cURL to issue requests to REST endpoints. 
 * An Office 365 account. You can sign up for [an Office 365 Developer subscription](https://portal.office.com/Signup/Signup.aspx?OfferId=6881A1CB-F4EB-4db3-9F18-388898DAF510&DL=DEVELOPERPACK&ali=1#0) that includes the resources that you need to start building Office 365 apps.
 
@@ -39,6 +39,7 @@ To use the Office 365 PHP Connect sample, you need the following:
     ```
     php -S 0.0.0.0:8000 -t app
     ```
+    
 6. Navigate to ```http://localhost:8000/Connect.php``` in your web browser.
 
 ## Troubleshooting
