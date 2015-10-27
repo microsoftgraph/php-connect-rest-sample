@@ -10,7 +10,7 @@ Connecting to Office 365 is the first step every app must take to start working 
 
 To use the Office 365 PHP Connect sample, you need the following:
 
-* [PHP](http://php.net/) is required to run the sample on a development server. The sample has been tested on PHP 5.6 on Internet Information Services and Apache Server.
+* [PHP](http://php.net/) is required to run the sample on a development server. The instructions in this sample use the PHP 5.4 built-in web server. However, the sample has been tested on PHP 5.6 on Internet Information Services and Apache Server.
 	* Client URL (cURL) module. The web application uses cURL to issue requests to REST endpoints. 
 * An Office 365 account. You can sign up for [an Office 365 Developer subscription](https://portal.office.com/Signup/Signup.aspx?OfferId=6881A1CB-F4EB-4db3-9F18-388898DAF510&DL=DEVELOPERPACK&ali=1#0) that includes the resources that you need to start building Office 365 apps.
 
@@ -21,10 +21,10 @@ To use the Office 365 PHP Connect sample, you need the following:
 
      > **Important:** <br />
      You also need to make sure your Azure subscription is bound to your Office 365 tenant. To do this, see the Active Directory team's blog post, [Creating and Managing Multiple Windows Azure Active Directories](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx). The section **Adding a new directory** will explain how to do this. You can also see [Set up your Office 365 development environment](https://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription) and the section **Associate your Office 365 account with Azure AD to create and manage apps** for more information.
-* A [```client ID```](app/Constants.php#L29), [```key```](app/Constants.php#L30), and [```reply URL```](app/Constants.php#L31) values of an application registered in Azure. This sample application must be granted the **Send mail as signed-in user** permission for the **Office 365 unified API (preview)**. For details see [Register your brower-based web app with the Azure Management Portal](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterWebApp) and [grant proper permissions to the Connect application](https://github.com/OfficeDev/O365-PHP-Unified-API-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
+* A [```client ID```](app/Constants.php#L29), and [```key```](app/Constants.php#L30) values of an application registered in Azure. This sample application must be granted the **Send mail as signed-in user** permission for the **Office 365 unified API (preview)**. For details see [Register your brower-based web app with the Azure Management Portal](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterWebApp) and [grant proper permissions to the Connect application](https://github.com/OfficeDev/O365-PHP-Unified-API-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
 
      > **Note:** <br />
-     During the app registration process, make sure to specify **http://localhost/your\_web\_application/Callback.php** as the **Sign-on URL**.
+     During the app registration process, make sure to specify **http://localhost:8000/Callback.php** as the **Sign-on URL**.
 
 ## Configure and run the app
 
@@ -32,8 +32,11 @@ To use the Office 365 PHP Connect sample, you need the following:
 2. Using your favorite IDE, open **Constants.php** in the *app* folder.
 3. Replace *{YOUR AZURE CLIENT ID HERE}* with the client ID of your registered Azure application.
 4. Replace *{YOUR AZURE KEY HERE}* with the client secret of your registered Azure application.
-5. Replace *{YOUR AZURE REPLY URL HERE}* with the reply URL of your registered Azure application. 
-6. Navigate to ```http://localhost/<your_web_application>/Connect.php``` in your web browser.
+5. Start the built-in web server with the following command:
+    ```
+    php -S 0.0.0.0:8000 -t app
+    ```
+6. Navigate to ```http://localhost:8000/Connect.php``` in your web browser.
 
 ## Troubleshooting
 
