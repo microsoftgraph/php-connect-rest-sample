@@ -6,6 +6,9 @@ Connecting to Office 365 is the first step every app must take to start working 
 
 ![Office 365 PHP Connect sample screenshot](/readme-images/O365-PHP-Unified-API-Connect.png)
 
+> Note: For an in-depth look at the code, see [Understanding Connect code sample] (https://github.com/OfficeDev/O365-PHP-Unified-API-Connect/wiki/Understanding-Connect-code-sample).
+
+
 ## Prerequisites
 
 To use the Office 365 PHP Connect sample, you need the following:
