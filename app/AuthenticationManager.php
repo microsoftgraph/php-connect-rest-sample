@@ -150,7 +150,7 @@ class AuthenticationManager
             $connectUrl, 
             0, 
             strrpos($connectUrl, '/')
-        ) . '/Connect.php';
+        ) . '/index.php';
 
         // Logout endpoint is in the form
         // https://login.microsoftonline.com/common/oauth2/logout

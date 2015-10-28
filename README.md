@@ -27,7 +27,7 @@ To use the Office 365 PHP Connect sample, you need the following:
 * A [```client ID```](app/Constants.php#L29), and [```key```](app/Constants.php#L30) values of an application registered in Azure. This sample application must be granted the **Send mail as signed-in user** permission for the **Office 365 unified API (preview)**. For details see [Register your web server app with the Azure Management Portal](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp) and [grant proper permissions to the Connect application](https://github.com/OfficeDev/O365-PHP-Unified-API-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
 
      > **Note:** <br />
-     During the app registration process, make sure to specify **http://localhost:8000/Callback.php** as the **Sign-on URL**.
+     During the app registration process, make sure to specify **http://localhost:8000/callback.php** as the **Sign-on URL**.
 
 ## Configure and run the app
 
@@ -40,7 +40,7 @@ To use the Office 365 PHP Connect sample, you need the following:
     php -S 0.0.0.0:8000 -t app
     ```
     
-6. Navigate to ```http://localhost:8000/Connect.php``` in your web browser.
+6. Navigate to ```http://localhost:8000``` in your web browser.
 
 ## Troubleshooting
 

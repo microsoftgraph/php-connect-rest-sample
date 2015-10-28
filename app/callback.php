@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['code'])) {
     try 
     {
         AuthenticationManager::acquireToken();
-        header('Location: SendMail.php');
+        header('Location: sendmail.php');
         exit();
     } 
     catch (\RuntimeException $e)
