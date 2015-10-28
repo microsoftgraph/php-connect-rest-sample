@@ -33,8 +33,8 @@ To use the Office 365 PHP Connect sample, you need the following:
 
 1. Map a web application in your web server to the **app** folder in your local repository. 
 2. Using your favorite IDE, open **Constants.php** in the *app* folder.
-3. Replace *{YOUR AZURE CLIENT ID HERE}* with the client ID of your registered Azure application.
-4. Replace *{YOUR AZURE KEY HERE}* with the client secret of your registered Azure application.
+3. Replace *ENTER_YOUR_CLIENT_ID* with the client ID of your registered Azure application.
+4. Replace *ENTER_YOUR_SECRET* with the client secret of your registered Azure application.
 5. Start the built-in web server with the following command:
     ```
     php -S 0.0.0.0:8000 -t app

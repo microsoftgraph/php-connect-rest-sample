@@ -26,8 +26,8 @@ namespace Microsoft\Office365\UnifiedAPI\Connect;
  */
 class Constants
 {
-    const CLIENT_ID = '<YOUR AZURE CLIENT ID HERE>';
-    const CLIENT_SECRET = '<YOUR AZURE KEY HERE>';
+    const CLIENT_ID = 'ENTER_YOUR_CLIENT_ID';
+    const CLIENT_SECRET = 'ENTER_YOUR_SECRET';
     const REDIRECT_URI = 'http://localhost:8000/callback.php';
     const AUTHORITY_URL = 'https://login.microsoftonline.com/common';
     const AUTHORIZE_ENDPOINT = '/oauth2/authorize';
