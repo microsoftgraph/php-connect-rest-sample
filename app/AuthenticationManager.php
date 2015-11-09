@@ -145,7 +145,7 @@ class AuthenticationManager
             $_SERVER['SERVER_PORT'] . 
             $_SERVER['REQUEST_URI'];
         
-        // Get the full URL of the connect.php to send it to the logout endpoint
+        // Get the full URL of the index.php page to send it to the logout endpoint
         $connectUrl = substr(
             $connectUrl, 
             0, 
