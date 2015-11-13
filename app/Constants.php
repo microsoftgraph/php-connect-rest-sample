@@ -34,7 +34,7 @@ class Constants
     const TOKEN_ENDPOINT = '/oauth2/token';
     const LOGOUT_ENDPOINT = '/oauth2/logout';
     const RESOURCE_ID = 'https://graph.microsoft.com';
-    const SENDMAIL_ENDPOINT = '/v1.0/me/sendMail';
+    const SENDMAIL_ENDPOINT = '/v1.0/me/microsoft.graph.sendmail';
 }
     
 // *********************************************************
