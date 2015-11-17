@@ -75,7 +75,7 @@ $greetingName = isset($_SESSION['given_name'])
         </h2>
         <p class="ms-font-xl">
             You're now connected to Office 365. Click the button below to send a 
-            message from your account using the Office 365 unified API.
+            message from your account using the Microsoft Graph.
         </p>
         <div class="ms-TextField">
         <input 
