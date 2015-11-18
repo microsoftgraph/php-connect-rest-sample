@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/OfficeDev/O365-PHP-Unified-API-Connect.svg?branch=master)](https://travis-ci.org/OfficeDev/O365-PHP-Unified-API-Connect)
 
-Connecting to Office 365 is the first step every app must take to start working with Office 365 services and data. This sample shows how to connect and then call one API through the Microsoft Graph (previously called Office 365 unified API), and uses the Office Fabric UI to create an Office 365 experience.
+Connecting to Office 365 is the first step every app must take to start working with Office 365 services and data. This sample shows how to connect and then call one API through Microsoft Graph (previously called Office 365 unified API), and uses the Office Fabric UI to create an Office 365 experience.
 
 Try out the [Get started with Office 365 APIs](http://dev.office.com/getting-started/office365apis?platform=option-php#setup) page which simplifies registration so you can get this sample running faster.
 
@@ -26,7 +26,7 @@ To use the Office 365 PHP Connect sample, you need the following:
 
      > **Important:** <br />
      You also need to make sure your Azure subscription is bound to your Office 365 tenant. To do this, see the Active Directory team's blog post, [Creating and Managing Multiple Windows Azure Active Directories](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx). The section **Adding a new directory** will explain how to do this. You can also see [Set up your Office 365 development environment](https://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription) and the section **Associate your Office 365 account with Azure AD to create and manage apps** for more information.
-* A [```client ID```](app/Constants.php#L29), and [```key```](app/Constants.php#L30) values of an application registered in Azure. This sample application must be granted the **Send mail as signed-in user** permission for the **Office 365 unified API (preview)**. For details see [Register your web server app with the Azure Management Portal](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp) and [grant proper permissions to the Connect application](https://github.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
+* A [```client ID```](app/Constants.php#L29), and [```key```](app/Constants.php#L30) values of an application registered in Azure. This sample application must be granted the **Send mail as a user** permission for the **Microsoft Graph**. For details see [Register your web server app with the Azure Management Portal](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp) and [grant proper permissions to the Connect application](https://github.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
 
      > **Note:** <br />
      During the app registration process, make sure to specify **http://localhost:8000/callback.php** as the **Sign-on URL**.
