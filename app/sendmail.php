@@ -6,10 +6,10 @@
  *  PHP version 5
  *
  *  @category Code_Sample
- *  @package  O365-PHP-Unified-API-Connect
+ *  @package  O365-PHP-Microsoft-Graph-Connect
  *  @author   Ricardo Loo <ricardol@microsoft.com>
  *  @license  MIT License
- *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
+ *  @link     http://GitHub.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect
  */
  
 /*! 
@@ -75,7 +75,7 @@ $greetingName = isset($_SESSION['given_name'])
         </h2>
         <p class="ms-font-xl">
             You're now connected to Office 365. Click the button below to send a 
-            message from your account using the Office 365 unified API.
+            message from your account using the Microsoft Graph.
         </p>
         <div class="ms-TextField">
         <input 
@@ -127,8 +127,8 @@ $greetingName = isset($_SESSION['given_name'])
 <?php
 // *********************************************************
 //
-// O365-PHP-Unified-API-Connect
-// https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
+// O365-PHP-Microsoft-Graph-Connect
+// https://github.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect
 //
 // Copyright (c) Microsoft Corporation
 // All rights reserved.

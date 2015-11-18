@@ -6,10 +6,10 @@
  *  PHP version 5
  *
  *  @category Code_Sample
- *  @package  O365-PHP-Unified-API-Connect
+ *  @package  O365-PHP-Microsoft-Graph-Connect
  *  @author   Ricardo Loo <ricardol@microsoft.com>
  *  @license  MIT License
- *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
+ *  @link     http://GitHub.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect
  */
 
 namespace Microsoft\Office365\UnifiedAPI\Connect;
@@ -19,10 +19,10 @@ namespace Microsoft\Office365\UnifiedAPI\Connect;
  *
  *  @class    Constants
  *  @category Code_Sample
- *  @package  O365-PHP-Unified-API-Connect
+ *  @package  O365-PHP-Microsoft-Graph-Connect
  *  @author   Ricardo Loo <ricardol@microsoft.com>
  *  @license  MIT License
- *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
+ *  @link     http://GitHub.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect
  */
 class Constants
 {
@@ -34,13 +34,13 @@ class Constants
     const TOKEN_ENDPOINT = '/oauth2/token';
     const LOGOUT_ENDPOINT = '/oauth2/logout';
     const RESOURCE_ID = 'https://graph.microsoft.com';
-    const SENDMAIL_ENDPOINT = '/beta/me/sendMail';
+    const SENDMAIL_ENDPOINT = '/v1.0/me/microsoft.graph.sendmail';
 }
     
 // *********************************************************
 //
-// O365-PHP-Unified-API-Connect
-// https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
+// O365-PHP-Microsoft-Graph-Connect
+// https://github.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect
 //
 // Copyright (c) Microsoft Corporation
 // All rights reserved.

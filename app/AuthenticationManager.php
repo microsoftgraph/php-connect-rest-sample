@@ -6,14 +6,14 @@
  *  PHP version 5
  *
  *  @category Code_Sample
- *  @package  O365-PHP-Unified-API-Connect
+ *  @package  O365-PHP-Microsoft-Graph-Connect
  *  @author   Ricardo Loo <ricardol@microsoft.com>
  *  @license  MIT License
- *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
+ *  @link     http://GitHub.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect
  */
  
-/*! @header Office 365 PHP Connect sample using unified API (preview)
-    @abstract A PHP project that shows how to use the Office 365 unified API 
+/*! @header Office 365 PHP Connect sample using the Microsoft Graph
+    @abstract A PHP project that shows how to use the Microsoft Graph 
  */
  
 namespace Microsoft\Office365\UnifiedAPI\Connect;
@@ -32,10 +32,10 @@ require_once 'RequestManager.php';
  *
  *  @class    AuthenticationManager
  *  @category Code_Sample
- *  @package  O365-PHP-Unified-API-Connect
+ *  @package  O365-PHP-Microsoft-Graph-Connect
  *  @author   Ricardo Loo <ricardol@microsoft.com>
  *  @license  MIT License
- *  @link     http://GitHub.com/OfficeDev/O365-PHP-Unified-API-Connect
+ *  @link     http://GitHub.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect
  */
 class AuthenticationManager
 {
@@ -61,7 +61,7 @@ class AuthenticationManager
     /**
      *  Contacts the token endpoint to get OAuth tokens including an access token
      *  that can be used to send an authenticated request to the 
-     *  Office 365 unified API.
+     *  Microsoft Graph.
      *  It also stores user information, like given name, in session variables. 
      *
      *  @function acquireToken
@@ -164,8 +164,8 @@ class AuthenticationManager
     
 // *********************************************************
 //
-// O365-PHP-Unified-API-Connect
-// https://github.com/OfficeDev/O365-PHP-Unified-API-Connect
+// O365-PHP-Microsoft-Graph-Connect
+// https://github.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect
 //
 // Copyright (c) Microsoft Corporation
 // All rights reserved.
