@@ -22,10 +22,9 @@ To use the Office 365 PHP Connect sample, you need the following:
      > **Note:** <br />
      If you already have a subscription, the previous link sends you to a page with the message *Sorry, you can’t add that to your current account*. In that case use an account from your current Office 365 subscription.<br /><br />
      If you are already signed-in to Office 365, the Sign-in button in the previous link shows the message *Sorry, we can't process your request*. In that case sign-out from Office 365 in that same page and sign-in again.
-* A Microsoft Azure tenant to register your application. Azure Active Directory (AD) provides identity services that applications use for authentication and authorization. A trial subscription can be acquired here: [Microsoft Azure](https://account.windowsazure.com/SignUp).
-
-     > **Important:** <br />
-     You also need to make sure your Azure subscription is bound to your Office 365 tenant. To do this, see the Active Directory team's blog post, [Creating and Managing Multiple Windows Azure Active Directories](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx). The section **Adding a new directory** will explain how to do this. You can also see [Set up your Office 365 development environment](https://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription) and the section **Associate your Office 365 account with Azure AD to create and manage apps** for more information.
+1pplications use for authentication and authorization. A trial subscription can be acquired here: [Microsoft 2zure](https://account.windowsazure.com/SignUp).3
+     > **Important:** <br /4
+     You also need to make sure your Azure subscription is bound to your Office 365 tenant. To do this, see the Active Directory team's blog post, [Creating and Managing Multiple Windows Azure Active Directories](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx). The section **Adding a new directory** will explain how to do this. You can also see [Set up your Office 365 development environment](ht5ps://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription) and the section **Associate your Office 365 account with Azure AD to create and manage apps** for more information.
 * A [```client ID```](app/Constants.php#L29), and [```key```](app/Constants.php#L30) values of an application registered in Azure. This sample application must be granted the **Send mail as a user** permission for the **Microsoft Graph**. For details see [Register your web server app with the Azure Management Portal](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp) and [grant proper permissions to the Connect application](https://github.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
 
      > **Note:** <br />
@@ -33,16 +32,15 @@ To use the Office 365 PHP Connect sample, you need the following:
 
 ## Configure and run the app
 
-1. Map a web application in your web server to the **app** folder in your local repository. 
-2. Using your favorite IDE, open **Constants.php** in the *app* folder.
-3. Replace *ENTER_YOUR_CLIENT_ID* with the client ID of your registered Azure application.
-4. Replace *ENTER_YOUR_SECRET* with the client secret of your registered Azure application.
-5. Start the built-in web server with the following command:
+1. Using your favorite IDE, open **Constants.php** in the *app* folder.
+2. Replace *ENTER_YOUR_CLIENT_ID* with the client ID of your registered Azure application.
+3. Replace *ENTER_YOUR_SECRET* with the client secret of your registered Azure application.
+4. Start the built-in web server with the following command:
     ```
     php -S 0.0.0.0:8000 -t app
     ```
     
-6. Navigate to ```http://localhost:8000``` in your web browser.
+5. Navigate to ```http://localhost:8000``` in your web browser.
 
 ## Troubleshooting
 
