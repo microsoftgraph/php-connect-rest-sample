@@ -79,7 +79,7 @@ class MailManager
             
         // Send the email request to the sendmail endpoint, 
         // which is in the following URI:
-        // https://graph.microsoft.com/beta/me/sendMail
+        // https://graph.microsoft.com/v1.0/me/microsoft.graph.sendmail
         // Note that the access token is attached in the Authorization header
         RequestManager::sendPostRequest(
             Constants::RESOURCE_ID . Constants::SENDMAIL_ENDPOINT,
