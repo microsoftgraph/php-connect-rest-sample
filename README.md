@@ -8,7 +8,7 @@ Try out the [Get started with Office 365 APIs](http://dev.office.com/getting-sta
 
 ![Office 365 PHP Connect sample screenshot](/readme-images/O365-PHP-Microsoft-Graph-Connect.png)
 
-> Note: For an in-depth look at the code, see [Understanding Connect code sample] (https://github.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect/wiki/Understanding-Connect-code-sample).
+> Note: For an in-depth look at the code, see [Call Microsoft Graph in a PHP app]. (http://graph.microsoft.io/docs/platform/php).
 
 
 ## Prerequisites
