@@ -2,7 +2,7 @@
 /**
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  *  See LICENSE in the project root for license information.
- * 
+ *
  *  PHP version 5
  *
  *  @category Code_Sample
@@ -17,12 +17,15 @@
               Azure Active Directory (AD) finishes the authentication flow.
  */
 
-namespace Microsoft\Office365\UnifiedAPI\Connect;
+require_once('../autoload.php');
 
+use Microsoft\Office365\UnifiedAPI\Connect\AuthenticationManager;
+
+//We store user name, id, and tokens in session variables
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-require_once 'AuthenticationManager.php';
+
 
 // Get the authorization code and other parameters from the query string
 // and store them in the session.
@@ -41,15 +44,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['code'])) {
     }
     
     // With the authorization code, we can retrieve access tokens and other data.
-    try 
-    {
+    try {
         AuthenticationManager::acquireToken();
         header('Location: sendmail.php');
         exit();
-    } 
-    catch (\RuntimeException $e)
-    {
+    } catch (\RuntimeException $e) {
         echo 'Something went wrong, couldn\'t get tokens: ' . $e->getMessage();
     }
 }
-?>

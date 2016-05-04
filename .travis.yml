@@ -7,7 +7,7 @@ php:
 script:
   - pyrus install pear/PHP_CodeSniffer
   - phpenv rehash
-  - phpcs ./app
+  - phpcs --standard=PSR2 ./app ./src
     
 notifications:
   email:

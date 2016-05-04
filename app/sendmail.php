@@ -2,7 +2,7 @@
 /**
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  *  See LICENSE in the project root for license information.
- * 
+ *
  *  PHP version 5
  *
  *  @category Code_Sample
@@ -17,17 +17,18 @@
               The page offers UI to send a welcome email to the specified account. 
  */
 
-namespace Microsoft\Office365\UnifiedAPI\Connect;
+require_once("../autoload.php");
+
+use Microsoft\Office365\UnifiedAPI\Connect\MailManager;
 
 //We store user name, id, and tokens in session variables
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-require_once 'MailManager.php';
 
 // Use the given name if it exists, otherwise, use the alias
-$greetingName = isset($_SESSION['given_name']) 
-                ? $_SESSION['given_name'] 
+$greetingName = isset($_SESSION['given_name'])
+                ? $_SESSION['given_name']
                 : explode('@', $_SESSION['unique_name'])[0];
 
 ?>
@@ -89,12 +90,11 @@ $greetingName = isset($_SESSION['given_name'])
         </button>
         <div>
             <?php
-                // The user clicked the "Send mail" button 
+                // The user clicked the "Send mail" button
             if ($_SERVER['REQUEST_METHOD'] === 'POST'
                 && isset($_POST['recipient'])
             ) {
-                try
-                {
+                try {
                     MailManager::sendWelcomeMail($_POST['recipient']);
             ?>
                         <p 
@@ -103,15 +103,13 @@ $greetingName = isset($_SESSION['given_name'])
                             <?php echo $_POST['recipient']; ?>!
                         </p>
             <?php
-                } 
-                catch (\RuntimeException $e) 
-                {
-            ?>
+                } catch (\RuntimeException $e) {
+                ?>
                         <p 
                             class="ms-font-m ms-fontColor-redDark">
-                            Something went wrong, couldn't send an email.
+                            Something went wrong, couldn't send an email. <?php echo $e->getMessage(); ?>
                         </p>
-            <?php            
+            <?php
                 }
             }
             ?>

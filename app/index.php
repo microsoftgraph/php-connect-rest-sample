@@ -2,7 +2,7 @@
 /**
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  *  See LICENSE in the project root for license information.
- * 
+ *
  *  PHP version 5
  *
  *  @category Code_Sample
@@ -17,9 +17,9 @@
               the "connect" button.
  */
 
-namespace Microsoft\Office365\UnifiedAPI\Connect;
+require_once '../autoload.php';
 
-require_once'AuthenticationManager.php';
+use Microsoft\Office365\UnifiedAPI\Connect\AuthenticationManager;
 
 // User clicked the "connect" button. Start the authentication flow.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
