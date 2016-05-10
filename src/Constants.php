@@ -2,7 +2,7 @@
 /**
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  *  See LICENSE in the project root for license information.
- * 
+ *
  *  PHP version 5
  *
  *  @category Code_Sample
@@ -14,8 +14,8 @@
 
 namespace Microsoft\Office365\UnifiedAPI\Connect;
  
-/** 
- *  Stores constant and configuration values used through the app 
+/**
+ *  Stores constant and configuration values used through the app
  *
  *  @class    Constants
  *  @category Code_Sample
@@ -36,4 +36,3 @@ class Constants
     const RESOURCE_ID = 'https://graph.microsoft.com';
     const SENDMAIL_ENDPOINT = '/v1.0/me/microsoft.graph.sendmail';
 }
-?>

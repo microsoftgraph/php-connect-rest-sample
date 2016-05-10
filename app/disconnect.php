@@ -2,7 +2,7 @@
 /**
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  *  See LICENSE in the project root for license information.
- * 
+ *
  *  PHP version 5
  *
  *  @category Code_Sample
@@ -16,9 +16,8 @@
     @abstract Users are redirected to this page to initiate the disconnect flow
  */
 
-namespace Microsoft\Office365\UnifiedAPI\Connect;
+require_once('../autoload.php');
 
-require_once 'AuthenticationManager.php';
+use Microsoft\Office365\UnifiedAPI\Connect\AuthenticationManager;
 
 AuthenticationManager::disconnect();
-?>
