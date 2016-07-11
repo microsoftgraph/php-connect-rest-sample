@@ -17,7 +17,7 @@ Office 365 PHP Connect サンプルを使うには、次が必要です。
 
 * [PHP](http://php.net/) は、開発サーバー上でサンプルを実行するために必要です。このサンプルの手順では、PHP 5.4 組み込み Web サーバーを使います。ただし、サンプルは、インターネット インフォメーション サービスと Apache サーバーでもテストされています。
 	* クライアント URL (cURL) モジュール。Web アプリケーションでは、cURL を使って REST エンドポイントに要求を発行します。 
-* Office 365 アカウント。&lt;a herf="https://portal.office.com/Signup/Signup.aspx?OfferId=6881A1CB-F4EB-4db3-9F18-388898DAF510&amp;DL=DEVELOPERPACK&amp;ali=1#0"&gt;Office 365 Developer&lt;/a&gt; サブスクリプションにサイン アップすることができます。ここには、Office 365 アプリのビルドを開始するために必要なリソースが含まれています。
+* Office 365 アカウント。&lt;a herf="https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170"&gt;Office 365 Developer&lt;/a&gt; サブスクリプションにサイン アップすることができます。ここには、Office 365 アプリのビルドを開始するために必要なリソースが含まれています。
 
      > **注:**<br />
      サブスクリプションが既に存在する場合、上記のリンクをクリックすると、*申し訳ありません、現在のアカウントに追加できません* と表示されたページに移動します。その場合は、現在使用している Office 365 サブスクリプションのアカウントをご利用いただけます。<br /><br />
