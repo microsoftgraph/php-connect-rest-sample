@@ -17,7 +17,7 @@
 
 * [PHP](http://php.net/) 是在开发服务器上运行该示例所必需的。此示例中的说明使用 PHP 5.4 内置 Web 服务器。但还会在 Internet Information Services 和 Apache 服务器上测试该示例。
 	* 客户端 URL (cURL) 模块。Web 应用程序使用 cURL 将请求发送到 REST 终结点。 
-* Office 365 帐户。您可以注册 &lt;a herf="https://portal.office.com/Signup/Signup.aspx?OfferId=6881A1CB-F4EB-4db3-9F18-388898DAF510&amp;DL=DEVELOPERPACK&amp;ali=1#0"&gt;Office 365 开发人员订阅&lt;/a&gt;，其中包含开始构建 Office 365 应用所需的资源。
+* Office 365 帐户。您可以注册 &lt;a herf="https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170"&gt;Office 365 开发人员订阅&lt;/a&gt;，其中包含开始构建 Office 365 应用所需的资源。
 
      > **注意：**<br />
      如果您已经订阅，之前的链接会将您转至包含以下信息的页面：*抱歉，您无法将其添加到当前帐户*。在这种情况下，请使用当前 Office 365 订阅中的帐户。<br /><br />
