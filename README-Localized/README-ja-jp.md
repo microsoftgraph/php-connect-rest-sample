@@ -1,6 +1,6 @@
 # Microsoft Graph を使った Office 365 PHP Connect サンプル
 
-[![Build Status](https://travis-ci.org/OfficeDev/O365-PHP-Microsoft-Graph-Connect.svg?branch=master)](https://travis-ci.org/OfficeDev/O365-PHP-Microsoft-Graph-Connect)
+[![Build Status](https://travis-ci.org/microsoftgraph/php-connect-rest-sample.svg?branch=master)](https://travis-ci.org/microsoftgraph/php-connect-rest-sample)
 
 各アプリで Office 365 のサービスとデータの操作を開始するため、最初に Office 365 に接続する必要があります。このサンプルでは、Microsoft Graph (以前は Office 365 統合 API と呼ばれていた) を介して 1 つの API に接続して呼び出す方法を示し、Office Fabric UI を使って Office 365 エクスペリエンスを作成します。
 
