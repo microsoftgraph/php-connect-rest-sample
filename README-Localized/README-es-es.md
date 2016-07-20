@@ -18,7 +18,7 @@ Para usar el ejemplo Connect de PHP para Office 365, necesita lo siguiente:
 * 
             Se requiere [PHP](http://php.net/) para ejecutar el ejemplo en un servidor de desarrollo. Las instrucciones de este ejemplo usan el servidor web integrado PHP 5.4. Sin embargo, el ejemplo también se probó en Internet Information Services y en el servidor Apache.
 	* Módulo de la dirección URL del cliente(cURL). La aplicación web usa cURL para emitir solicitudes a los puntos de conexión REST. 
-* Una cuenta de Office 365. Puede registrarse para obtener &lt;a herf="https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170"&gt;una suscripción a Office 365 Developer&lt;/a&gt;, que incluye los recursos que necesita para empezar a compilar aplicaciones de Office 365.
+* Una cuenta de Office 365. Puede registrarse para obtener [una suscripción a Office 365 Developer](https://aka.ms/devprogramsignup), que incluye los recursos que necesita para empezar a compilar aplicaciones de Office 365.
 
      > **Nota:**<br />
      Si ya dispone de una suscripción, el vínculo anterior le dirige a una página con el mensaje *No se puede agregar a su cuenta actual*. En ese caso, use una cuenta de su suscripción actual a Office 365.<br /><br />
