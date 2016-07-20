@@ -18,7 +18,7 @@ Para usar o exemplo de conexão com o Office 365 para PHP, é necessário o segu
 * 
             É necessário [PHP](http://php.net/) para executar o exemplo em um servidor de desenvolvimento. As instruções deste exemplo usam o servidor Web interno do PHP 5.4. No entanto, o exemplo também foi testado nos Serviços de Informações da Internet e no servidor Apache.
 	* Módulo de cURL (URL do Cliente). O aplicativo Web usa a cURL para emitir solicitações para pontos de extremidade REST. 
-* Uma conta do Office 365. Você pode se inscrever para &lt;a herf="https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170"&gt;uma assinatura do Office 365 Developer&lt;/a&gt;, que inclui os recursos de que você precisa para começar a criar aplicativos do Office 365.
+* Uma conta do Office 365. Você pode se inscrever para [uma assinatura do Office 365 Developer](https://aka.ms/devprogramsignup), que inclui os recursos de que você precisa para começar a criar aplicativos do Office 365.
 
      > **Observação:**<br />
      Caso já tenha uma assinatura, o link anterior direciona você para uma página com a mensagem *Não é possível adicioná-la à sua conta atual*. Nesse caso, use uma conta de sua assinatura atual do Office 365.<br /><br />
