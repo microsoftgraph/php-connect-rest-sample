@@ -1,6 +1,6 @@
 <?php
 
-namespace Microsoft\Office365\UnifiedAPI\Connect;
+namespace Microsoft\Graph\Connect;
 
 class Exception extends \RuntimeException
 {

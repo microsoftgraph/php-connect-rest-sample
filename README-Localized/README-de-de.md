@@ -6,7 +6,7 @@ Für die Arbeit mit Office 365-Diensten und -Daten muss jede App zunächst eine 
 
 Rufen Sie die Seite [Erste Schritte mit Office 365-APIs](http://dev.office.com/getting-started/office365apis?platform=option-php#setup) auf. Auf dieser wird die Registrierung vereinfacht, damit Sie dieses Beispiel schneller ausführen können.
 
-![Screenshot des Office 365 PHP Connect-Beispiels](../readme-images/O365-PHP-Microsoft-Graph-Connect.png)
+![Screenshot des Office 365 PHP Connect-Beispiels](../readme-images/php-connect-rest-sample.png)
 
 > Hinweis: Einen umfassenden Einblick in den Code erhalten Sie unter [Aufrufen von Microsoft Graph in einer PHP-App] (http://graph.microsoft.io/docs/platform/php).
 
@@ -27,7 +27,7 @@ Zum Verwenden des 365 PHP Connect-Beispiels benötigen Sie Folgendes:
 
      > **Wichtig:**<br />
      Sie müssen zudem sicherstellen, dass Ihr Azure-Abonnement an Ihren Office 365-Mandanten gebunden ist. Rufen Sie dafür den Blogpost [Creating and Managing Multiple Windows Azure Active Directories](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx) des Active Directory-Teams auf. Im Abschnitt **Adding a new directory** finden Sie Informationen über die entsprechende Vorgehensweise. Weitere Informationen finden Sie zudem unter [Einrichten Ihrer Office 365-Entwicklungsumgebung](ht5ps://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription) im Abschnitt **Verknüpfen Ihres Office 365-Kontos mit Azure AD zum Erstellen und Verwalten von Apps**.
-* Eine [```Client-ID```](app/Constants.php#L29) und [```Schlüsselwerte```](app/Constants.php#L30) einer in Azure registrierten Anwendung. Dieser Beispielanwendung muss die Berechtigung **E-Mails unter einem anderen Benutzernamen senden** für **Microsoft Graph** gewährt werden. Ausführliche Informationen finden Sie unter [Registrieren der Webserver-App mithilfe des Azure-Verwaltungsportals](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp) und im Thema über das [Gewähren entsprechender Berechtigungen zur Connect-Anwendung](https://github.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
+* Eine [```Client-ID```](app/Constants.php#L29) und [```Schlüsselwerte```](app/Constants.php#L30) einer in Azure registrierten Anwendung. Dieser Beispielanwendung muss die Berechtigung **E-Mails unter einem anderen Benutzernamen senden** für **Microsoft Graph** gewährt werden. Ausführliche Informationen finden Sie unter [Registrieren der Webserver-App mithilfe des Azure-Verwaltungsportals](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp) und im Thema über das [Gewähren entsprechender Berechtigungen zur Connect-Anwendung](https://github.com/OfficeDev/php-connect-rest-sample/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
 
      > **Hinweis:**<br />
      Stellen Sie während des App-Registrierungsvorgangs sicher, dass **http://localhost:8000/callback.php** als **Anmelde-URL** angegeben ist.
@@ -64,7 +64,7 @@ cURL kann die Gültigkeit des Microsoft-Zertifikats nicht überprüfen, wenn ver
 
 ## Fragen und Kommentare
 
-Wir schätzen Ihr Feedback hinsichtlich des Office 365 PHP Connect-Beispiels. Sie können uns Ihre Fragen und Vorschläge über den Abschnitt [Probleme](https://github.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect/issues) dieses Repositorys senden.
+Wir schätzen Ihr Feedback hinsichtlich des Office 365 PHP Connect-Beispiels. Sie können uns Ihre Fragen und Vorschläge über den Abschnitt [Probleme](https://github.com/OfficeDev/php-connect-rest-sample/issues) dieses Repositorys senden.
 
 Allgemeine Fragen zur Office 365-Entwicklung sollten in [Stack Overflow](http://stackoverflow.com/questions/tagged/Office365+API) gestellt werden. Stellen Sie sicher, dass Ihre Fragen oder Kommentare mit [Office365] und [API] markiert sind.
   

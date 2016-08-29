@@ -6,10 +6,10 @@
  *  PHP version 5
  *
  *  @category Code_Sample
- *  @package  O365-PHP-Microsoft-Graph-Connect
+ *  @package  php-connect-rest-sample
  *  @author   Ricardo Loo <ricardol@microsoft.com>
  *  @license  MIT License
- *  @link     http://GitHub.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect
+ *  @link     http://github.com/microsoftgraph/php-connect-rest-sample
  */
  
 /*! 
@@ -19,7 +19,7 @@
 
 require_once("../autoload.php");
 
-use Microsoft\Office365\UnifiedAPI\Connect\MailManager;
+use Microsoft\Graph\Connect\MailManager;
 
 //We store user name, id, and tokens in session variables
 if (session_status() == PHP_SESSION_NONE) {

@@ -6,13 +6,13 @@
  *  PHP version 5
  *
  *  @category Code_Sample
- *  @package  O365-PHP-Microsoft-Graph-Connect
+ *  @package  php-connect-rest-sample
  *  @author   Ricardo Loo <ricardol@microsoft.com>
  *  @license  MIT License
- *  @link     http://GitHub.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect
+ *  @link     http://github.com/microsoftgraph/php-connect-rest-sample
  */
 
-namespace Microsoft\Office365\UnifiedAPI\Connect;
+namespace Microsoft\Graph\Connect;
 
 /**
  *  Handles the creation of the email and sends the request
@@ -20,10 +20,10 @@ namespace Microsoft\Office365\UnifiedAPI\Connect;
  *
  *  @class    MailManager
  *  @category Code_Sample
- *  @package  O365-PHP-Microsoft-Graph-Connect
+ *  @package  php-connect-rest-sample
  *  @author   Ricardo Loo <ricardol@microsoft.com>
  *  @license  MIT License
- *  @link     http://GitHub.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect
+ *  @link     http://github.com/microsoftgraph/php-connect-rest-sample
  */
 class MailManager
 {
