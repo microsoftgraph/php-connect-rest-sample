@@ -27,7 +27,7 @@ Para usar o exemplo de conexão com o Office 365 para PHP, é necessário o segu
 
      > **Importante:**<br />
      Você também deve assegurar que a sua assinatura do Azure esteja vinculada ao seu locatário do Office 365. Para saber como fazer isso, confira a postagem de blog da equipe do Active Directory: [Criar e gerenciar vários Microsoft Azure Active Directory](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx). A seção **Adicionar um novo diretório** explica como fazer isso. Para saber mais, confira o artigo [Configurar o seu ambiente de desenvolvimento do Office 365](ht5ps://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription) e a seção **Associar a sua conta do Office 365 ao Azure AD para criar e gerenciar aplicativos**.
-* Valores de [```ID do cliente```](app/Constants.php#L29) e de [```chave```](app/Constants.php#L30) de um aplicativo registrado no Azure. Este exemplo de aplicativo deve receber permissão para **Enviar email como um usuário** para o **Microsoft Graph**. Para obter informações detalhadas, confira o artigo [Registrar o aplicativo do servidor Web com o Portal de Gerenciamento do Azure](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp) e [conceda as permissões adequadas para o aplicativo de conexão](https://github.com/OfficeDev/php-connect-rest-sample/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
+* Valores de [```ID do cliente```](app/Constants.php#L29) e de [```chave```](app/Constants.php#L30) de um aplicativo registrado no Azure. Este exemplo de aplicativo deve receber permissão para **Enviar email como um usuário** para o **Microsoft Graph**. Para obter informações detalhadas, confira o artigo [Registrar o aplicativo do servidor Web com o Portal de Gerenciamento do Azure](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp) e [conceda as permissões adequadas para o aplicativo de conexão](https://github.com/microsoftgraph/php-connect-rest-sample/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
 
      > **Observação:**<br />
      Durante o processo de registro do aplicativo, não deixe de especificar **http://localhost:8000/callback.php** como a **URL de Entrada**.
@@ -64,7 +64,7 @@ O cURL não pode verificar a validade do certificado da Microsoft ao tentar emit
 
 ## Perguntas e comentários
 
-Gostaríamos de saber sua opinião sobre o exemplo de conexão com o Office 365 para PHP. Você pode enviar perguntas e sugestões na seção [Problemas](https://github.com/OfficeDev/php-connect-rest-sample/issues) deste repositório.
+Gostaríamos de saber sua opinião sobre o exemplo de conexão com o Office 365 para PHP. Você pode enviar perguntas e sugestões na seção [Problemas](https://github.com/microsoftgraph/php-connect-rest-sample/issues) deste repositório.
 
 As perguntas sobre o desenvolvimento do Office 365 em geral devem ser postadas no [Stack Overflow](http://stackoverflow.com/questions/tagged/Office365+API). Não deixe de marcar as perguntas ou comentários com [Office365] e [API].
   
@@ -73,7 +73,7 @@ As perguntas sobre o desenvolvimento do Office 365 em geral devem ser postadas n
 * [Visão geral da plataforma de APIs do Office 365](https://msdn.microsoft.com/office/office365/howto/platform-development-overview)
 * [Introdução às APIs do Office 365](http://dev.office.com/getting-started/office365apis)
 * [Visão geral do Microsoft Graph](http://graph.microsoft.io/)
-* &lt;a herf="https://github.com/officedev?utf8=%E2%9C%93&amp;query=Microsoft-Graph-Connect"&gt;Outros exemplos do Microsoft Graph Connect&lt;/a&gt;
+* &lt;a herf="https://github.com/microsoftgraph?utf8=%E2%9C%93&amp;query=Microsoft-Graph-Connect"&gt;Outros exemplos do Microsoft Graph Connect&lt;/a&gt;
 * [Exemplos de código e projetos iniciais de APIs do Office 365](https://msdn.microsoft.com/office/office365/howto/starter-projects-and-code-samples)
 * [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric)
 

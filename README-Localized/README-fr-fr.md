@@ -26,7 +26,7 @@ Pour utiliser l’exemple de connexion de PHP à Office 365, vous devez dispose
 
      > **Important :**<br />
      vous devez également vous assurer que votre abonnement Azure est lié à votre client Office 365. Pour cela, consultez le billet du blog de l’équipe d’Active Directory relatif à la [création et la gestion de plusieurs fenêtres dans les répertoires Azure Active Directory](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx). La section sur l’**ajout d’un nouveau répertoire** vous explique comment procéder. Pour en savoir plus, vous pouvez également consulter la rubrique relative à la [configuration de votre environnement de développement Office 365](ht5ps://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription) et la section sur l’**association de votre compte Office 365 à Azure Active Directory pour créer et gérer des applications**.
-* Un [```ID client```](app/Constants.php#L29) et des valeurs [```clés```](app/Constants.php#L30) d’une application enregistrée dans Azure. Cet exemple d’application doit obtenir l’autorisation **Envoyer un courrier électronique en tant qu’utilisateur** pour **Microsoft Graph**. Pour plus d’informations, consultez [Enregistrer une application de serveur web avec le portail de gestion Azure](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp) et [Accorder les autorisations appropriées à l’application de connexion](https://github.com/OfficeDev/php-connect-rest-sample/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
+* Un [```ID client```](app/Constants.php#L29) et des valeurs [```clés```](app/Constants.php#L30) d’une application enregistrée dans Azure. Cet exemple d’application doit obtenir l’autorisation **Envoyer un courrier électronique en tant qu’utilisateur** pour **Microsoft Graph**. Pour plus d’informations, consultez [Enregistrer une application de serveur web avec le portail de gestion Azure](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp) et [Accorder les autorisations appropriées à l’application de connexion](https://github.com/microsoftgraph/php-connect-rest-sample/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
 
      > **Remarque :**<br />
      pendant le processus d’inscription de l’application, veillez à indiquer **http://localhost:8000/callback.php** en tant qu’**URL d’authentification**.
@@ -63,7 +63,7 @@ cURL ne peut pas vérifier la validité du certificat Microsoft quand vous tente
 
 ## Questions et commentaires
 
-Nous serions ravis de connaître votre opinion sur l’exemple de connexion de PHP à Microsoft Graph. Vous pouvez nous faire part de vos questions et suggestions dans la rubrique [Problèmes](https://github.com/OfficeDev/php-connect-rest-sample/issues) de ce référentiel.
+Nous serions ravis de connaître votre opinion sur l’exemple de connexion de PHP à Microsoft Graph. Vous pouvez nous faire part de vos questions et suggestions dans la rubrique [Problèmes](https://github.com/microsoftgraph/php-connect-rest-sample/issues) de ce référentiel.
 
 Si vous avez des questions sur le développement d’Office 365, envoyez-les sur [Stack Overflow](http://stackoverflow.com/questions/tagged/Office365+API). Posez vos questions avec les balises [API] et [Office365].
   
@@ -72,7 +72,7 @@ Si vous avez des questions sur le développement d’Office 365, envoyez-les su
 * [Présentation de la plateforme des API Office 365](https://msdn.microsoft.com/office/office365/howto/platform-development-overview)
 * [Prise en main des API Office 365](http://dev.office.com/getting-started/office365apis)
 * [Présentation de Microsoft Graph](http://graph.microsoft.io/)
-* &lt;a herf="https://github.com/officedev?utf8=%E2%9C%93&amp;query=Microsoft-Graph-Connect"&gt;Autres exemples de connexion Microsoft Graph&lt;/a&gt;
+* &lt;a herf="https://github.com/microsoftgraph?utf8=%E2%9C%93&amp;query=Microsoft-Graph-Connect"&gt;Autres exemples de connexion Microsoft Graph&lt;/a&gt;
 * [Projets de démarrage et exemples de codes des API Office 365](https://msdn.microsoft.com/office/office365/howto/starter-projects-and-code-samples)
 * [Structure de l’interface utilisateur Office](https://github.com/OfficeDev/Office-UI-Fabric)
 
