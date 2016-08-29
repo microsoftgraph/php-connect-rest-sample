@@ -16,7 +16,7 @@ namespace Microsoft\Graph\Connect;
 
 /**
  *  Handles the creation of the email and sends the request
- *  to the Office 365 unified endpoint
+ *  to Microsoft Graph
  *
  *  @class    MailManager
  *  @category Code_Sample
@@ -55,7 +55,7 @@ class MailManager
         // Build the HTTP request payload (the Message object).
         $email = "{
             Message: {
-            Subject: 'Welcome to Office 365 development with PHP',
+            Subject: 'Welcome to Microsoft Graph development with PHP',
             Body: {
                 ContentType: 'HTML',
                 Content: '{$emailBody}'

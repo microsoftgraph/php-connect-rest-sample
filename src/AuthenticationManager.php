@@ -12,7 +12,7 @@
  *  @link     http://github.com/microsoftgraph/php-connect-rest-sample
  */
  
-/*! @header Office 365 PHP Connect sample using the Microsoft Graph
+/*! @header PHP Connect sample using the Microsoft Graph
     @abstract A PHP project that shows how to use the Microsoft Graph 
  */
  

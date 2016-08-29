@@ -17,7 +17,7 @@ namespace Microsoft\Graph\Connect;
 /**
  *  Sends POST requests to the specified endpoint.
  *  It's used by AuthenticationManager to get OAuth tokens and
- *  MailManager to contact the Office 365 unified endpoint.
+ *  MailManager to contact Microsoft Graph.
  *
  *  @class    RequestManager
  *  @category Code_Sample

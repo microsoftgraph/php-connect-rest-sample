@@ -63,7 +63,7 @@ cURL ne peut pas vérifier la validité du certificat Microsoft quand vous tente
 
 ## Questions et commentaires
 
-Nous serions ravis de connaître votre opinion sur l’exemple de connexion de PHP à Office 365. Vous pouvez nous faire part de vos questions et suggestions dans la rubrique [Problèmes](https://github.com/OfficeDev/php-connect-rest-sample/issues) de ce référentiel.
+Nous serions ravis de connaître votre opinion sur l’exemple de connexion de PHP à Microsoft Graph. Vous pouvez nous faire part de vos questions et suggestions dans la rubrique [Problèmes](https://github.com/OfficeDev/php-connect-rest-sample/issues) de ce référentiel.
 
 Si vous avez des questions sur le développement d’Office 365, envoyez-les sur [Stack Overflow](http://stackoverflow.com/questions/tagged/Office365+API). Posez vos questions avec les balises [API] et [Office365].
   

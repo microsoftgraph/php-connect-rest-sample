@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>O365 Connect sample</title>
+  <title>Microsoft Graph Connect sample</title>
 
   <!-- Third party dependencies. -->
   <link 

@@ -38,7 +38,7 @@ $greetingName = isset($_SESSION['given_name'])
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>O365 Connect sample</title>
+  <title>Microsoft Graph Connect sample</title>
 
   <!-- Third party dependencies. -->
   <link 
@@ -58,7 +58,7 @@ $greetingName = isset($_SESSION['given_name'])
     <!-- App navigation bar markup. -->
     <div class="ms-NavBar">
     <ul class="ms-NavBar-items">
-        <li class="navbar-header">Office 365 Connect sample</li>
+        <li class="navbar-header">Microsoft Graph Connect sample</li>
         <li 
             class="ms-NavBar-item ms-NavBar-item--right" 
             onclick="window.location.href='disconnect.php'">
@@ -75,7 +75,7 @@ $greetingName = isset($_SESSION['given_name'])
             Hi, <?php echo $greetingName; ?>!
         </h2>
         <p class="ms-font-xl">
-            You're now connected to Office 365. Click the button below to send a 
+            You're now connected to Microsoft Graph. Click the button below to send a 
             message from your account using the Microsoft Graph.
         </p>
         <div class="ms-TextField">
