@@ -6,17 +6,17 @@
  *  PHP version 5
  *
  *  @category Code_Sample
- *  @package  O365-PHP-Microsoft-Graph-Connect
+ *  @package  php-connect-rest-sample
  *  @author   Ricardo Loo <ricardol@microsoft.com>
  *  @license  MIT License
- *  @link     http://GitHub.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect
+ *  @link     http://github.com/microsoftgraph/php-connect-rest-sample
  */
  
-/*! @header Office 365 PHP Connect sample using the Microsoft Graph
+/*! @header PHP Connect sample using the Microsoft Graph
     @abstract A PHP project that shows how to use the Microsoft Graph 
  */
  
-namespace Microsoft\Office365\UnifiedAPI\Connect;
+namespace Microsoft\Graph\Connect;
 
 /**
  *  Provides methods to authenticate to Azure AD and
@@ -24,10 +24,10 @@ namespace Microsoft\Office365\UnifiedAPI\Connect;
  *
  *  @class    AuthenticationManager
  *  @category Code_Sample
- *  @package  O365-PHP-Microsoft-Graph-Connect
+ *  @package  php-connect-rest-sample
  *  @author   Ricardo Loo <ricardol@microsoft.com>
  *  @license  MIT License
- *  @link     http://GitHub.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect
+ *  @link     http://github.com/microsoftgraph/php-connect-rest-sample
  */
 class AuthenticationManager
 {

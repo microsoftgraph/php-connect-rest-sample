@@ -6,10 +6,10 @@
  *  PHP version 5
  *
  *  @category Code_Sample
- *  @package  O365-PHP-Microsoft-Graph-Connect
+ *  @package  php-connect-rest-sample
  *  @author   Ricardo Loo <ricardol@microsoft.com>
  *  @license  MIT License
- *  @link     http://GitHub.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect
+ *  @link     http://github.com/microsoftgraph/php-connect-rest-sample
  */
  
 /*! 
@@ -18,6 +18,6 @@
 
 require_once('../autoload.php');
 
-use Microsoft\Office365\UnifiedAPI\Connect\AuthenticationManager;
+use Microsoft\Graph\Connect\AuthenticationManager;
 
 AuthenticationManager::disconnect();

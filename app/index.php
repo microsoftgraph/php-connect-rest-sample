@@ -6,10 +6,10 @@
  *  PHP version 5
  *
  *  @category Code_Sample
- *  @package  O365-PHP-Microsoft-Graph-Connect
+ *  @package  php-connect-rest-sample
  *  @author   Ricardo Loo <ricardol@microsoft.com>
  *  @license  MIT License
- *  @link     http://GitHub.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect
+ *  @link     http://github.com/microsoftgraph/php-connect-rest-sample
  */
  
 /*! 
@@ -19,7 +19,7 @@
 
 require_once '../autoload.php';
 
-use Microsoft\Office365\UnifiedAPI\Connect\AuthenticationManager;
+use Microsoft\Graph\Connect\AuthenticationManager;
 
 // User clicked the "connect" button. Start the authentication flow.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>O365 Connect sample</title>
+  <title>Microsoft Graph Connect sample</title>
 
   <!-- Third party dependencies. -->
   <link 
@@ -55,16 +55,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- App navigation bar markup. -->
         <div class="ms-NavBar">
             <ul class="ms-NavBar-items">
-                <li class="navbar-header">Office 365 Connect sample</li>
+                <li class="navbar-header">Microsoft Graph Connect sample</li>
             </ul>
         </div>
 
     <!-- App main content markup. -->
     <div class="ms-Grid-col ms-u-mdPush1 ms-u-md9 ms-u-lgPush1 ms-u-lg6">
         <div>
-            <p class="ms-font-xl">Use the button below to connect to Office 365.</p>
+            <p class="ms-font-xl">Use the button below to connect to Microsoft Graph.</p>
             <button class="ms-Button">
-                <span class="ms-Button-label">Connect to Office 365</span>
+                <span class="ms-Button-label">Connect to Microsoft Graph</span>
             </button>
         </div>
     </div>

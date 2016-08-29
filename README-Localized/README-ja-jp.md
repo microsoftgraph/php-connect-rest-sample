@@ -6,7 +6,7 @@
 
 このサンプルをより迅速に実行するため、「[Office 365 API を使う](http://dev.office.com/getting-started/office365apis?platform=option-php#setup)」ページに記載された登録の簡略化をお試しください。
 
-![Office 365 PHP Connect サンプルのスクリーンショット](../readme-images/O365-PHP-Microsoft-Graph-Connect.png)
+![Office 365 PHP Connect サンプルのスクリーンショット](../readme-images/php-connect-rest-sample.png)
 
 > 注:コードについて詳しくは、「PHP アプリで Microsoft Graph を呼び出す」(http://graph.microsoft.io/docs/platform/php) をご覧ください。
 
@@ -26,7 +26,7 @@ Office 365 PHP Connect サンプルを使うには、次が必要です。
 
      > **重要事項:**<br />
      Azure サブスクリプションが Office 365 テナントにバインドされていることを確認する必要があります。確認するには、Active Directory チームのブログ投稿「[複数の Windows Azure Active Directory を作成および管理する](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx)」を参照してください。「**新しいディレクトリを追加する**」セクションで、この方法について説明しています。また、詳細については、「[Office 365 開発環境をセットアップする](ht5ps://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription)」や「**Office 365 アカウントを Azure AD と関連付けてアプリを作成および管理する**」セクションも参照してください。
-* Azure に登録されたアプリケーションの[```クライアント ID```](app/Constants.php#L29) と[```キー```](app/Constants.php#L30)の値。このサンプル アプリケーションには、**Microsoft Graph** の**ユーザーとしてメールを送信する**アクセス許可を付与する必要があります。詳しくは、「[Azure 管理ポータルに Web サーバー アプリを登録する](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp)」と「[Connect アプリケーションに適切なアクセス許可を付与する](https://github.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect/wiki/Grant-permissions-to-the-Connect-application-in-Azure)」をご覧ください。
+* Azure に登録されたアプリケーションの[```クライアント ID```](app/Constants.php#L29) と[```キー```](app/Constants.php#L30)の値。このサンプル アプリケーションには、**Microsoft Graph** の**ユーザーとしてメールを送信する**アクセス許可を付与する必要があります。詳しくは、「[Azure 管理ポータルに Web サーバー アプリを登録する](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp)」と「[Connect アプリケーションに適切なアクセス許可を付与する](https://github.com/OfficeDev/php-connect-rest-sample/wiki/Grant-permissions-to-the-Connect-application-in-Azure)」をご覧ください。
 
      > **注:**<br />
      アプリ登録プロセス時に、**サインオン URL** として **http://localhost:8000/callback.php** を必ず指定します。
@@ -63,7 +63,7 @@ cURL は、トークンを取得する要求の呼び出しを発行しようと
 
 ## 質問とコメント
 
-Office 365 PHP Connect サンプルについて、Microsoft にフィードバックをお寄せください。質問や提案につきましては、このリポジトリの「[問題](https://github.com/OfficeDev/O365-PHP-Microsoft-Graph-Connect/issues)」セクションに送信できます。
+Office 365 PHP Connect サンプルについて、Microsoft にフィードバックをお寄せください。質問や提案につきましては、このリポジトリの「[問題](https://github.com/OfficeDev/php-connect-rest-sample/issues)」セクションに送信できます。
 
 Office 365 開発全般の質問につきましては、「[スタック オーバーフロー](http://stackoverflow.com/questions/tagged/Office365+API)」に投稿してください。質問またはコメントには、必ず [Office365] および [API] のタグを付けてください。
   
