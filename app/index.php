@@ -17,13 +17,26 @@
               the "connect" button.
  */
 
-require_once '../autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
-use Microsoft\Graph\Connect\AuthenticationManager;
+use Microsoft\Graph\Connect\Constants; 
 
 // User clicked the "connect" button. Start the authentication flow.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    AuthenticationManager::connect();
+    $provider = new \League\OAuth2\Client\Provider\GenericProvider([
+        clientId                => Constants::CLIENT_ID,
+        clientSecret            => Constants::CLIENT_SECRET,
+        redirectUri             => Constants::REDIRECT_URI,
+        urlAuthorize            => Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT,
+        urlAccessToken          => Constants::AUTHORITY_URL . Constants::TOKEN_ENDPOINT,
+        urlResourceOwnerDetails => Constants::RESOURCE_ID . Constants::RESOURCE_OWNER_DETAILS_ENDPOINT
+    ]);
+    
+    $authorizationUrl = $provider->getAuthorizationUrl();
+    $_SESSION['oauth2state'] = $provider->getState();
+
+    header('Location: ' . $authorizationUrl);
+    exit();
 }
 
 ?>
