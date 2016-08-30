@@ -32,7 +32,6 @@ class Constants
     const AUTHORITY_URL = 'https://login.microsoftonline.com/common';
     const AUTHORIZE_ENDPOINT = '/oauth2/v2.0/authorize';
     const TOKEN_ENDPOINT = '/oauth2/v2.0/token';
-    const LOGOUT_ENDPOINT = '/oauth2/logout';
     const RESOURCE_ID = 'https://graph.microsoft.com';
     const SENDMAIL_ENDPOINT = '/v1.0/me/sendmail';
     const RESOURCE_OWNER_DETAILS_ENDPOINT = '/v1.0/me';
