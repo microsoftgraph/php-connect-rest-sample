@@ -33,5 +33,5 @@ $connectUrl = 'http://localhost:8000/index.php';
 // ?post_logout_redirect_uri=<full_url_of_your_start_page>
 $redirect = Constants::AUTHORITY_URL . Constants::LOGOUT_ENDPOINT .
             '?post_logout_redirect_uri=' . urlencode($connectUrl);
-header("Location: " . $redirect);
+header('Location: ' . $redirect);
 exit();
