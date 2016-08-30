@@ -15,7 +15,7 @@
 spl_autoload_register(function ($class) {
 
     // project-specific namespace prefix
-    $prefix = 'Microsoft\\Office365\\UnifiedAPI\\Connect\\';
+    $prefix = 'Microsoft\\Graph\\Connect\\';
 
     // base directory for the namespace prefix
     $base_dir = __DIR__ . '/src/';

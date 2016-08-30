@@ -17,13 +17,14 @@
               the "connect" button.
  */
 
-require_once '../autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
-use Microsoft\Graph\Connect\AuthenticationManager;
+use Microsoft\Graph\Connect\Constants;
 
 // User clicked the "connect" button. Start the authentication flow.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    AuthenticationManager::connect();
+    header('Location: /oauth.php');
+    exit();
 }
 
 ?>

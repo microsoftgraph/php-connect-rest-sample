@@ -1,7 +1,11 @@
 {
+    "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Microsoft\\Office365\\UnifiedAPI\\Connect\\": "src/"
+            "Microsoft\\Graph\\Connect\\": "src/"
         }
+    },
+    "require": {
+        "league/oauth2-client": "^1.4"
     }
 }
