@@ -16,7 +16,8 @@ Try out the [Get started with Office 365 APIs](http://dev.office.com/getting-sta
 To use the PHP Connect sample, you need the following:
 
 * [PHP](http://php.net/) is required to run the sample on a development server. The instructions in this sample use the PHP 5.4 built-in web server. However, the sample has also been tested on Internet Information Services and Apache Server.
-	* Client URL (cURL) module. The web application uses cURL to issue requests to REST endpoints. 
+	* Client URL (cURL) module. The web application uses cURL to issue requests to REST endpoints.
+    * [Composer](https://getcomposer.org/), dependency manager for PHP
 * An Office 365 account. You can sign up for [an Office 365 Developer subscription](https://aka.ms/devprogramsignup) that includes the resources that you need to start building Office 365 apps.
 
      > **Note:** <br />
@@ -36,12 +37,16 @@ To use the PHP Connect sample, you need the following:
 1. Using your favorite IDE, open **Constants.php** in the *app* folder.
 2. Replace *ENTER_YOUR_CLIENT_ID* with the client ID of your registered Azure application.
 3. Replace *ENTER_YOUR_SECRET* with the client secret of your registered Azure application.
-4. Start the built-in web server with the following command:
+4. Install the dependencies with the following command:
+    ```
+    composer install
+    ```
+5. Start the built-in web server with the following command:
     ```
     php -S 0.0.0.0:8000 -t app
     ```
     
-5. Navigate to ```http://localhost:8000``` in your web browser.
+6. Navigate to ```http://localhost:8000``` in your web browser.
 
 ## Troubleshooting
 
