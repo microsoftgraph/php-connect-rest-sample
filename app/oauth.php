@@ -59,11 +59,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['code'])) {
             resource => Constants::RESOURCE_ID
         ]);
         $_SESSION['access_token'] = $accessToken->getToken();
+        
+        // The access token is a JWT token that contains information about the user
+        // It's a base64 coded string that has a header and payload
+        $decodedAccessTokenPayload = base64_decode(
+            explode('.', $_SESSION['access_token'])[1]
+        );
+        $jsonAccessTokenPayload = json_decode($decodedAccessTokenPayload, true);
 
-        // TODO: Look up details about the resource owner
-        // $resourceOwner = $provider->getResourceOwner($accessToken);
-        $_SESSION['unique_name'] = 'mollyd@mod182601.onmicrosoft.com';
-        // $_SESSION['given_name'] = $resourceOwner->displayName;
+        // The following user properties are needed in the next page
+        $_SESSION['unique_name'] = $jsonAccessTokenPayload['unique_name'];
+        $_SESSION['given_name'] = $jsonAccessTokenPayload['given_name'];
 
         header('Location: sendmail.php');
         exit();
