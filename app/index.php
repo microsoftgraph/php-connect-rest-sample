@@ -23,7 +23,7 @@ use Microsoft\Graph\Connect\Constants;
 
 // User clicked the "connect" button. Start the authentication flow.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    header('Location: /callback.php');
+    header('Location: /oauth.php');
     exit();
 }
 
