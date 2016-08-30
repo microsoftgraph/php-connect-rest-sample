@@ -19,7 +19,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use Microsoft\Graph\Connect\Constants; 
+use Microsoft\Graph\Connect\Constants;
 
 // User clicked the "connect" button. Start the authentication flow.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
