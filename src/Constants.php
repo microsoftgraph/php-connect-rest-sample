@@ -34,5 +34,5 @@ class Constants
     const TOKEN_ENDPOINT = '/oauth2/v2.0/token';
     const RESOURCE_ID = 'https://graph.microsoft.com';
     const SENDMAIL_ENDPOINT = '/v1.0/me/sendmail';
-    const SCOPES='openid offline_access user.read mail.send';
+    const SCOPES='openid profile mail.send';
 }
