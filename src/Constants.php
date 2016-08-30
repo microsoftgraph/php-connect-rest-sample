@@ -36,5 +36,5 @@ class Constants
     const RESOURCE_ID = 'https://graph.microsoft.com';
     const SENDMAIL_ENDPOINT = '/v1.0/me/microsoft.graph.sendmail';
     const RESOURCE_OWNER_DETAILS_ENDPOINT = '/v1.0/me';
-    const SCOPES='openid offline_access user.read';
+    const SCOPES='openid offline_access user.read mail.send';
 }
