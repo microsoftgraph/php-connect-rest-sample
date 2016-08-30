@@ -41,6 +41,7 @@ To use the PHP Connect sample, you need the following:
     ```
     composer install
     ```
+    
 5. Start the built-in web server with the following command:
     ```
     php -S 0.0.0.0:8000 -t app
