@@ -32,7 +32,7 @@ $provider = new \League\OAuth2\Client\Provider\GenericProvider([
     redirectUri             => Constants::REDIRECT_URI,
     urlAuthorize            => Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT,
     urlAccessToken          => Constants::AUTHORITY_URL . Constants::TOKEN_ENDPOINT,
-    urlResourceOwnerDetails => Constants::RESOURCE_ID . Constants::RESOURCE_OWNER_DETAILS_ENDPOINT,
+    urlResourceOwnerDetails => '',
     scopes                  => Constants::SCOPES
 ]);
 
