@@ -17,38 +17,57 @@
               Azure Active Directory (AD) finishes the authentication flow.
  */
 
-require_once('../autoload.php');
+require_once __DIR__ . '/../vendor/autoload.php';
 
-use Microsoft\Graph\Connect\AuthenticationManager;
+use Microsoft\Graph\Connect\Constants;
 
 //We store user name, id, and tokens in session variables
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
+$provider = new \League\OAuth2\Client\Provider\GenericProvider([
+    clientId                => Constants::CLIENT_ID,
+    clientSecret            => Constants::CLIENT_SECRET,
+    redirectUri             => Constants::REDIRECT_URI,
+    urlAuthorize            => Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT,
+    urlAccessToken          => Constants::AUTHORITY_URL . Constants::TOKEN_ENDPOINT,
+    urlResourceOwnerDetails => Constants::RESOURCE_ID . Constants::RESOURCE_OWNER_DETAILS_ENDPOINT
+]);
 
-// Get the authorization code and other parameters from the query string
-// and store them in the session.
-if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['code'])) {
-    if (isset($_GET['admin_consent'])) {
-        $_SESSION['admin_consent'] = $_GET['admin_consent'];
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['code'])) {
+    $authorizationUrl = $provider->getAuthorizationUrl();
+
+    // The OAuth library automaticaly generates a state value that we can
+    // validate later. We just save it for now.
+    $_SESSION['state'] = $provider->getState();
+
+    header('Location: ' . $authorizationUrl);
+    exit();
+} elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['code'])) {
+    // Validate the OAuth state parameter 
+    if (empty($_GET['state']) || ($_GET['state'] !== $_SESSION['state'])) {
+        unset($_SESSION['state']);
+        exit('State value does not match the one initially sent');
     }
-    if (isset($_GET['code'])) {
-        $_SESSION['code'] =  $_GET['code'];
-    }
-    if (isset($_GET['session_state'])) {
-        $_SESSION['session_state'] =  $_GET['session_state'];
-    }
-    if (isset($_GET['state'])) {
-        $_SESSION['state'] =  $_GET['state'];
-    }
-    
+
     // With the authorization code, we can retrieve access tokens and other data.
     try {
-        AuthenticationManager::acquireToken();
+        // Get an access token using the authorization code grant
+        $accessToken = $provider->getAccessToken('authorization_code', [
+            code     => $_GET['code'],
+            resource => Constants::RESOURCE_ID
+        ]);
+        $_SESSION['accessToken'] = $accessToken->getToken();
+
+        // TODO: Look up details about the resource owner
+        // $resourceOwner = $provider->getResourceOwner($accessToken);
+        // $_SESSION['unique_name'] = $resourceOwner->mail;
+        // $_SESSION['given_name'] = $resourceOwner->displayName;
+
         header('Location: sendmail.php');
         exit();
-    } catch (\RuntimeException $e) {
+    } catch (League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
         echo 'Something went wrong, couldn\'t get tokens: ' . $e->getMessage();
     }
 }
