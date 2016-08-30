@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['code'])) {
     header('Location: ' . $authorizationUrl);
     exit();
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['code'])) {
-    // Validate the OAuth state parameter 
+    // Validate the OAuth state parameter
     if (empty($_GET['state']) || ($_GET['state'] !== $_SESSION['state'])) {
         unset($_SESSION['state']);
         exit('State value does not match the one initially sent');
@@ -58,11 +58,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['code'])) {
             code     => $_GET['code'],
             resource => Constants::RESOURCE_ID
         ]);
-        $_SESSION['accessToken'] = $accessToken->getToken();
+        $_SESSION['access_token'] = $accessToken->getToken();
 
         // TODO: Look up details about the resource owner
         // $resourceOwner = $provider->getResourceOwner($accessToken);
-        // $_SESSION['unique_name'] = $resourceOwner->mail;
+        $_SESSION['unique_name'] = 'mollyd@mod182601.onmicrosoft.com';
         // $_SESSION['given_name'] = $resourceOwner->displayName;
 
         header('Location: sendmail.php');
