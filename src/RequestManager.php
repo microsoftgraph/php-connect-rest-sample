@@ -77,7 +77,7 @@ class RequestManager
         if ($info['http_code'] >= 400) {
             $response = json_decode($response, true);
 
-            $message = $info['http_code'] . ": " . $response['error']['message'];
+            $message = $info['http_code'] . ": " . $response['error'];
 
             throw new \RuntimeException($message);
         }
