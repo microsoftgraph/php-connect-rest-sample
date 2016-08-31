@@ -18,25 +18,33 @@ To use the PHP Connect sample, you need the following:
 * [PHP](http://php.net/) is required to run the sample on a development server. The instructions in this sample use the PHP 5.4 built-in web server. However, the sample has also been tested on Internet Information Services and Apache Server.
 	* Client URL (cURL) module. The web application uses cURL to issue requests to REST endpoints.
     * [Composer](https://getcomposer.org/), dependency manager for PHP
-* An Office 365 account. You can sign up for [an Office 365 Developer subscription](https://aka.ms/devprogramsignup) that includes the resources that you need to start building Office 365 apps.
 
-     > **Note:** <br />
-     If you already have a subscription, the previous link sends you to a page with the message *Sorry, you can’t add that to your current account*. In that case use an account from your current Office 365 subscription.<br /><br />
-     If you are already signed-in to Office 365, the Sign-in button in the previous link shows the message *Sorry, we can't process your request*. In that case sign-out from Office 365 in that same page and sign-in again.
-* A Microsoft Azure Tenant to register your application. Azure Active Directory (AD) provides identity services that applications use for authentication and authorization. A trial subscription can be acquired at [Microsoft Azure](https://account.windowsazure.com/SignUp).
+<a name="register"></a>
+##Register and configure the app
 
-     > **Important:** <br />
-     You also need to make sure your Azure subscription is bound to your Office 365 tenant. To do this, see the Active Directory team's blog post, [Creating and Managing Multiple Windows Azure Active Directories](http://blogs.technet.com/b/ad/archive/2013/11/08/creating-and-managing-multiple-windows-azure-active-directories.aspx). The section **Adding a new directory** will explain how to do this. You can also see [Set up your Office 365 development environment](ht5ps://msdn.microsoft.com/office/office365/howto/setup-development-environment#bk_CreateAzureSubscription) and the section **Associate your Office 365 account with Azure AD to create and manage apps** for more information.
-* A [```client ID```](app/Constants.php#L29), and [```key```](app/Constants.php#L30) values of an application registered in Azure. This sample application must be granted the **Send mail as a user** permission for the **Microsoft Graph**. For details see [Register your web server app with the Azure Management Portal](https://msdn.microsoft.com/office/office365/HowTo/add-common-consent-manually#bk_RegisterServerApp) and [grant proper permissions to the Connect application](https://github.com/microsoftgraph/php-connect-rest-sample/wiki/Grant-permissions-to-the-Connect-application-in-Azure).
+1. Sign into the [App Registration Portal](https://apps.dev.microsoft.com/) using either your personal or work or school account.
+2. Select **Add an app**.
+3. Enter a name for the app, and select **Create application**.
+	
+	The registration page displays, listing the properties of your app.
+ 
+4. Under **Platforms**, select **Add platform**.
+5. Select **Web**.
+6. Add the following to the list of **Redirect URIs**:
 
-     > **Note:** <br />
-     During the app registration process, make sure to specify **http://localhost:8000/callback.php** as the **Sign-on URL**.
+    ```
+    http://localhost:8000/oauth.php
+    ```    
+    
+7. Under **Application Secrets** click **Generate New Password**.
+8. Copy the **New password generated** and **Application Id**, you'll need them in the next section.
+9. Click **Save**.
 
 ## Configure and run the app
 
 1. Using your favorite IDE, open **Constants.php** in the *app* folder.
-2. Replace *ENTER_YOUR_CLIENT_ID* with the client ID of your registered Azure application.
-3. Replace *ENTER_YOUR_SECRET* with the client secret of your registered Azure application.
+2. Replace *ENTER_YOUR_CLIENT_ID* with the client ID of your application id.
+3. Replace *ENTER_YOUR_SECRET* with the client secret of your password.
 4. Install the dependencies with the following command:
     ```
     composer install

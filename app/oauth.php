@@ -32,7 +32,8 @@ $provider = new \League\OAuth2\Client\Provider\GenericProvider([
     redirectUri             => Constants::REDIRECT_URI,
     urlAuthorize            => Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT,
     urlAccessToken          => Constants::AUTHORITY_URL . Constants::TOKEN_ENDPOINT,
-    urlResourceOwnerDetails => Constants::RESOURCE_ID . Constants::RESOURCE_OWNER_DETAILS_ENDPOINT
+    urlResourceOwnerDetails => '',
+    scopes                  => Constants::SCOPES
 ]);
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['code'])) {
@@ -55,21 +56,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['code'])) {
     try {
         // Get an access token using the authorization code grant
         $accessToken = $provider->getAccessToken('authorization_code', [
-            code     => $_GET['code'],
-            resource => Constants::RESOURCE_ID
+            code     => $_GET['code']
         ]);
         $_SESSION['access_token'] = $accessToken->getToken();
         
-        // The access token is a JWT token that contains information about the user
-        // It's a base64 coded string that has a header and payload
+        // The id token is a JWT token that contains information about the user
+        // It's a base64 coded string that has a header, payload and signature
+        $idToken = $accessToken->getValues()['id_token'];
         $decodedAccessTokenPayload = base64_decode(
-            explode('.', $_SESSION['access_token'])[1]
+            explode('.', $idToken)[1]
         );
         $jsonAccessTokenPayload = json_decode($decodedAccessTokenPayload, true);
 
         // The following user properties are needed in the next page
-        $_SESSION['unique_name'] = $jsonAccessTokenPayload['unique_name'];
-        $_SESSION['given_name'] = $jsonAccessTokenPayload['given_name'];
+        $_SESSION['unique_name'] = $jsonAccessTokenPayload['preferred_username'];
+        $_SESSION['given_name'] = $jsonAccessTokenPayload['name'];
 
         header('Location: sendmail.php');
         exit();
