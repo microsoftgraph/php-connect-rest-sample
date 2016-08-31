@@ -39,12 +39,22 @@ class MailManager
      */
     public static function sendWelcomeMail($recipient)
     {
-        $emailBody = file_get_contents('MailTemplate.html');
+        MailManager::sendWelcomeMailWithToken(
+            $recipient,
+            $_SESSION['access_token'],
+            $_SESSION['given_name'],
+            $_SESSION['unique_name']
+        );
+    }
+
+    public static function sendWelcomeMailWithToken($recipient, $accessToken, $givenName, $uniqueName)
+    {
+        $emailBody = file_get_contents(__DIR__ . '/../app/MailTemplate.html');
         
         // Use the given name if it exists, otherwise, use the alias
-        $greetingName = isset($_SESSION['given_name'])
-                        ? $_SESSION['given_name']
-                        : explode('@', $_SESSION['unique_name'])[0];
+        $greetingName = isset($givenName)
+                        ? $givenName
+                        : explode('@', $uniqueName)[0];
 
         $emailBody = str_replace(
             '{given_name}',
@@ -78,7 +88,7 @@ class MailManager
         RequestManager::sendPostRequest(
             Constants::RESOURCE_ID . Constants::SENDMAIL_ENDPOINT,
             array(
-                'Authorization: Bearer ' . $_SESSION['access_token'],
+                'Authorization: Bearer ' . $accessToken,
                 'Content-Type: application/json;' .
                               'odata.metadata=minimal;' .
                               'odata.streaming=true'
