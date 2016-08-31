@@ -25,3 +25,6 @@ fuel/app/cache/*/*
 
 # Eclipse
 .settings
+
+# Test artifacts
+testConfig.json
