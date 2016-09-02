@@ -43,18 +43,18 @@ class MailManager
             $recipient,
             $_SESSION['access_token'],
             $_SESSION['given_name'],
-            $_SESSION['unique_name']
+            $_SESSION['preferred_username']
         );
     }
 
-    public static function sendWelcomeMailWithToken($recipient, $accessToken, $givenName, $uniqueName)
+    public static function sendWelcomeMailWithToken($recipient, $accessToken, $givenName, $preferredUsername)
     {
         $emailBody = file_get_contents(__DIR__ . '/../app/MailTemplate.html');
         
         // Use the given name if it exists, otherwise, use the alias
         $greetingName = isset($givenName)
                         ? $givenName
-                        : explode('@', $uniqueName)[0];
+                        : explode('@', $preferredUsername)[0];
 
         $emailBody = str_replace(
             '{given_name}',

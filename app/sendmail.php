@@ -29,7 +29,7 @@ if (session_status() == PHP_SESSION_NONE) {
 // Use the given name if it exists, otherwise, use the alias
 $greetingName = isset($_SESSION['given_name'])
                 ? $_SESSION['given_name']
-                : explode('@', $_SESSION['unique_name'])[0];
+                : explode('@', $_SESSION['preferred_username'])[0];
 
 ?>
 <!DOCTYPE html>
@@ -82,7 +82,7 @@ $greetingName = isset($_SESSION['given_name'])
         <input 
             class="ms-TextField-field" 
             name="recipient" 
-            value="<?php echo $_SESSION['unique_name']; ?>"
+            value="<?php echo $_SESSION['preferred_username']; ?>"
         >
         </div>
         <button class="ms-Button">

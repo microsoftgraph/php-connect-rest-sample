@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['code'])) {
         $jsonAccessTokenPayload = json_decode($decodedAccessTokenPayload, true);
 
         // The following user properties are needed in the next page
-        $_SESSION['unique_name'] = $jsonAccessTokenPayload['preferred_username'];
+        $_SESSION['preferred_username'] = $jsonAccessTokenPayload['preferred_username'];
         $_SESSION['given_name'] = $jsonAccessTokenPayload['name'];
 
         header('Location: sendmail.php');
