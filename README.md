@@ -43,8 +43,8 @@ To use the PHP Connect sample, you need the following:
 ## Configure and run the app
 
 1. Using your favorite IDE, open **Constants.php** in the *app* folder.
-2. Replace *ENTER_YOUR_CLIENT_ID* with the client ID of your application id.
-3. Replace *ENTER_YOUR_SECRET* with the client secret of your password.
+2. Replace *ENTER_YOUR_CLIENT_ID* with the application id from the previous section.
+3. Replace *ENTER_YOUR_SECRET* with the password from the previous section.
 4. Install the dependencies with the following command:
     ```
     composer install
