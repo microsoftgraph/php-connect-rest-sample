@@ -38,7 +38,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title" onClick="window.location='/oauth'">Sign in to Microsoft</div>
             </div>
         </div>
     </body>
