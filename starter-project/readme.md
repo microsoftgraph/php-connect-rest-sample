@@ -1,4 +1,4 @@
-# Office 365 Node.js Connect starter project
+# Microsoft Graph Starter project for PHP
 This is the starter project used by the PHP walkthrough in the [Microsoft Graph documentation](http://graph.microsoft.io).
 
 This project has the following features already configured so you can focus on the code:
