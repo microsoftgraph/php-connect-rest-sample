@@ -6,7 +6,9 @@ This project has the following features already configured so you can focus on t
 * Basic Laravel structure
 * Dependency to the OAuth library
 * Basic UI
-* Type-hint to the required class 
+* Type-hint to the required class
+
+Just run `composer install` and add the code specified in the walkthrough. 
 
 ## Copyright
 Copyright (c) 2016 Microsoft. All rights reserved.
