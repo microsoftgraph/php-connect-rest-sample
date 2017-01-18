@@ -36,15 +36,18 @@ $provider = new \League\OAuth2\Client\Provider\GenericProvider([
     'scopes'                  => Constants::SCOPES
 ]);
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['code'])) {
-    $authorizationUrl = $provider->getAuthorizationUrl();
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['code']) && !isset($_GET['error'])) {
+	$authorizationUrl = $provider->getAuthorizationUrl();
 
-    // The OAuth library automaticaly generates a state value that we can
-    // validate later. We just save it for now.
-    $_SESSION['state'] = $provider->getState();
+	// The OAuth library automaticaly generates a state value that we can
+	// validate later. We just save it for now.
+	$_SESSION['state'] = $provider->getState();
 
-    header('Location: ' . $authorizationUrl);
-    exit();
+	header('Location: ' . $authorizationUrl);
+	exit();
+} elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['error'])) {
+	// Answer from the authentication service contains an error.
+	printf('Something went wrong while authenticating: [%s] %s', $_GET['error'], $_GET['error_description']);
 } elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['code'])) {
     // Validate the OAuth state parameter
     if (empty($_GET['state']) || ($_GET['state'] !== $_SESSION['state'])) {
@@ -75,6 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['code'])) {
         header('Location: sendmail.php');
         exit();
     } catch (League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
-        echo 'Something went wrong, couldn\'t get tokens: ' . $e->getMessage();
+        printf('Something went wrong, couldn\'t get tokens: %s', $e->getMessage());
     }
 }
