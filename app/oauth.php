@@ -27,13 +27,13 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 $provider = new \League\OAuth2\Client\Provider\GenericProvider([
-    clientId                => Constants::CLIENT_ID,
-    clientSecret            => Constants::CLIENT_SECRET,
-    redirectUri             => Constants::REDIRECT_URI,
-    urlAuthorize            => Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT,
-    urlAccessToken          => Constants::AUTHORITY_URL . Constants::TOKEN_ENDPOINT,
-    urlResourceOwnerDetails => '',
-    scopes                  => Constants::SCOPES
+    'clientId'                => Constants::CLIENT_ID,
+    'clientSecret'            => Constants::CLIENT_SECRET,
+    'redirectUri'             => Constants::REDIRECT_URI,
+    'urlAuthorize'            => Constants::AUTHORITY_URL . Constants::AUTHORIZE_ENDPOINT,
+    'urlAccessToken'          => Constants::AUTHORITY_URL . Constants::TOKEN_ENDPOINT,
+    'urlResourceOwnerDetails' => '',
+    'scopes'                  => Constants::SCOPES
 ]);
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['code'])) {
