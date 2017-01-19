@@ -13,7 +13,7 @@
  */
 
 namespace Microsoft\Graph\Connect;
- 
+
 /**
  *  Stores constant and configuration values used through the app
  *
@@ -26,9 +26,9 @@ namespace Microsoft\Graph\Connect;
  */
 class Constants
 {
-    const CLIENT_ID = 'ENTER_YOUR_CLIENT_ID';
-    const CLIENT_SECRET = 'ENTER_YOUR_SECRET';
-    const REDIRECT_URI = 'http://localhost:8000/oauth.php';
+    const CLIENT_ID = '9421e31d-aa1f-482c-9804-942e69aa1d66';
+    const CLIENT_SECRET = 'YJnjOJcXeBrTJWoqKK22MfV';
+    const REDIRECT_URI = 'https://testoffice365.sites.kirra.nl/app/oauth.php';
     const AUTHORITY_URL = 'https://login.microsoftonline.com/common';
     const AUTHORIZE_ENDPOINT = '/oauth2/v2.0/authorize';
     const TOKEN_ENDPOINT = '/oauth2/v2.0/token';
