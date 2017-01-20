@@ -13,7 +13,7 @@
  */
 
 namespace Microsoft\Graph\Connect;
- 
+
 /**
  *  Stores constant and configuration values used through the app
  *
