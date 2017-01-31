@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['code']) && !isset($_GE
     try {
         // Get an access token using the authorization code grant
         $accessToken = $provider->getAccessToken('authorization_code', [
-            code     => $_GET['code']
+            'code'     => $_GET['code']
         ]);
         $_SESSION['access_token'] = $accessToken->getToken();
         
