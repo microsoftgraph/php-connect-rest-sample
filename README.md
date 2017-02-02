@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/microsoftgraph/php-connect-rest-sample.svg?branch=master)](https://travis-ci.org/microsoftgraph/php-connect-rest-sample)
 
-Connecting to Microsoft Graph is the first step every app must take to start working with Office 365 services and data. This sample shows how to connect and then call one API through Microsoft Graph (previously called Office 365 unified API), and uses the Office Fabric UI to create an Office 365 experience.
+Connecting to Microsoft Graph is the first step every app must take to start working with Office 365 services and data. This sample shows how to connect and then call one API through Microsoft Graph and uses the Office Fabric UI to create an Office 365 experience.
 
-Try out the [Get started with Office 365 APIs](http://dev.office.com/getting-started/office365apis?platform=option-php#setup) page which simplifies registration so you can get this sample running faster.
+Try out the [Microsoft Graph Quick Start](https://graph.microsoft.io/en-us/getting-started) page which simplifies registration so you can get this sample running faster.
 
 ![PHP Connect sample screenshot](/readme-images/php-connect-rest-sample.png)
 
@@ -15,7 +15,7 @@ Try out the [Get started with Office 365 APIs](http://dev.office.com/getting-sta
 
 To use the PHP Connect sample, you need the following:
 
-* [PHP](http://php.net/) is required to run the sample on a development server. The instructions in this sample use the PHP 5.4 built-in web server. However, the sample has also been tested on Internet Information Services and Apache Server.
+* [PHP](https://php.net/) is required to run the sample on a development server. The instructions in this sample use the PHP 5.4 built-in web server. However, the sample has also been tested on Internet Information Services and Apache Server.
 	* Client URL (cURL) module. The web application uses cURL to issue requests to REST endpoints.
     * [Composer](https://getcomposer.org/), dependency manager for PHP
 
@@ -68,12 +68,16 @@ SSL certificate problem: unable to get local issuer certificate
 
 cURL can't verify the validity of the Microsoft certificate when trying to issue a request call to get tokens. You must configure cURL to use a certificate when issuing https requests by following these steps:  
 
-1. Download the cacert.pem file from [cURL website](http://curl.haxx.se/docs/caextract.html). 
-2. Open your php.ini file and add the following line
+1. Download the cacert.pem file from [cURL website](https://curl.haxx.se/docs/caextract.html). 
+  - In Chrome, right-click the **cacert.pem** link and choose **Save link as**.
+  - In Microsoft Edge, right-click the **cacert.pem** link and choose **Save target as**. Then rename the saved file's **htm** extension to **pem**.
+2. Open your php.ini file and add the following line:
 
 	```
-	curl.cainfo = "path_to_cacert/cacert.pem"
+	curl.cainfo = "absolute_path_to_cacert/cacert.pem"
 	```
+	
+3. Restart the server.
 
 <a name="contributing"></a>
 ## Contributing ##
@@ -86,13 +90,12 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 We'd love to get your feedback about the PHP Connect sample. You can send your questions and suggestions to us in the [Issues](https://github.com/microsoftgraph/php-connect-rest-sample/issues) section of this repository.
 
-Questions about Microsoft Graph development in general should be posted to [Stack Overflow](http://stackoverflow.com/questions/tagged/Office365+API). Make sure that your questions or comments are tagged with [MicrosoftGraph] and [API].
+Questions about Microsoft Graph development in general should be posted to [Stack Overflow](https://stackoverflow.com/questions/tagged/MicrosoftGraph). Make sure that your questions or comments are tagged with [MicrosoftGraph] and [API].
   
 ## Additional resources
 
-* [Microsoft Graph](http://graph.microsoft.io/)
-* [Office 365 APIs platform overview](https://msdn.microsoft.com/office/office365/howto/platform-development-overview)
-* [Getting started with Office 365 APIs](http://dev.office.com/getting-started/office365apis)
+* [Microsoft Graph](https://graph.microsoft.io/)
+* [Other PHP samples for Microsoft Graph](https://github.com/microsoftgraph?utf8=%E2%9C%93&q=sample&type=&language=PHP)
 * [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric)
 
 ## Copyright
