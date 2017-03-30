@@ -20,7 +20,7 @@ To use the PHP Connect sample, you need the following:
     * [Composer](https://getcomposer.org/), dependency manager for PHP
 
 <a name="register"></a>
-##Register and configure the app
+## Register and configure the app
 
 1. Sign into the [App Registration Portal](https://apps.dev.microsoft.com/) using either your personal or work or school account.
 2. Select **Add an app**.
