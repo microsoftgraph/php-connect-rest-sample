@@ -1,0 +1,19 @@
+### YamlMime:Sample
+sample:
+- name: PHP Connect sample using Microsoft Graph
+  path: ''
+  description: Connecting to Microsoft Graph is the first step every app must take to start working with Office 365 services and data. This sample shows how to connect and then call one API through Microsoft Graph and uses the Office Fabric UI to create an Office 365 experience.
+  readme: ''
+  generateZip: FALSE
+  isLive: TRUE
+  technologies:
+  - Microsoft Graph
+  azureDeploy: ''
+  author: jamescro
+  platforms: []
+  languages:
+  - PHP
+  extensions:
+    products:
+    - Office 365
+    scenarios: []
