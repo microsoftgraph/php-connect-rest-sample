@@ -1,6 +1,10 @@
-# PHP Connect sample using Microsoft Graph
+# [ARCHIVED] PHP Connect sample using Microsoft Graph
 
-[![Build Status](https://travis-ci.org/microsoftgraph/php-connect-rest-sample.svg?branch=master)](https://travis-ci.org/microsoftgraph/php-connect-rest-sample)
+## IMPORTANT
+
+**This project is being archived and replaced with the [Build PHP apps with Microsoft Graph](https://github.com/microsoftgraph/msgraph-training-phpapp). As part of the archival process, we're closing all open issues and pull requests.**
+
+**You can continue to use this sample "as-is", but it won't be maintained moving forward. We apologize for any inconvenience.**
 
 Connecting to Microsoft Graph is the first step every app must take to start working with Office 365 services and data. This sample shows how to connect and then call one API through Microsoft Graph and uses the Office Fabric UI to create an Office 365 experience.
 
